@@ -1,6 +1,7 @@
 import { useParams } from "next/navigation"
 import { useMemo } from "react"
 
+// Get conversation ID and if this conversation is open
 const useConversation = () => {
   const params = useParams()
 

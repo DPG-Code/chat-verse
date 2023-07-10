@@ -18,15 +18,18 @@ const AuthForm = () => {
   const [variant,setVariant] = useState<Variant>('LOGIN')
   const [isLoading,setIsLoading] = useState(false)
 
+  // Show Login or Register FORM depending of variant ('LOGIN' | 'REGISTER')
   useEffect(() => {
     if (session?.status === 'authenticated') router.push('/users')
   },[session?.status,router])
 
+  // Function to toggle variant
   const toggleVariant = useCallback(() => {
     if (variant === 'LOGIN') setVariant('REGISTER')
     else setVariant('LOGIN')
   },[variant])
 
+  // Data from form
   const { register,handleSubmit,formState: { errors } } = useForm<FieldValues>({
     defaultValues: {
       name: '',
@@ -35,6 +38,7 @@ const AuthForm = () => {
     }
   })
 
+  // Action to realize depending of variant ('LOGIN' | 'REGISTER')
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true)
 
@@ -61,6 +65,7 @@ const AuthForm = () => {
     }
   }
 
+  // Choisse action to realize
   const soacialAction = (action: string) => {
     setIsLoading(true)
 

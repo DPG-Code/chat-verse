@@ -3,6 +3,7 @@ import { useMemo } from "react"
 import useConversation from "./useConversation"
 import { signOut } from "next-auth/react"
 
+// Get routes for sidebar
 const useRoutes = () => {
   const pathname = usePathname()
   const { conversationId } = useConversation()

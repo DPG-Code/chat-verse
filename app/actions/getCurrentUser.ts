@@ -1,7 +1,9 @@
-import prisma from '@/app/libs/prismasb'
+import prisma from '@/app/libs/prismadb'
 import getSession from "./getSession"
 
+// Get current user from initial session
 const getCurrentUser = async () => {
+  // get session -> find current user with actual session user -> return current user
   try {
     const session = await getSession()
 
