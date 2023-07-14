@@ -6,15 +6,17 @@ import prisma from "@/app/libs/prismadb"
 export async function POST(
   request: Request
 ) {
-  // Get data -> hashed password (bcrypt) -> create new user -> return user
   try {
     const body = await request.json()
     const { email, name, password } = body
   
+    // Check if required information is missing
     if(!email || !name || !password) return new NextResponse('Missing info', { status: 400 })
   
+    // Hash the password.
     const hashedPassword = await bcrypt.hash(password, 12)
   
+    // Create a new user and return the user object
     const user = await prisma.user.create({
       data: {
         email,

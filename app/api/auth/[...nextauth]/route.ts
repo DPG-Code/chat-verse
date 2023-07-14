@@ -7,10 +7,9 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter"
 
 import prisma from "@/app/libs/prismadb"
 
-// Authorization API
+// Authorization API configuration options
 export const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma),
-  // Authorization according to PROVIDER (Github, Google or normal account)
   providers: [
     GithubProvider({
       clientId: process.env.GITHUB_ID as string,
@@ -26,8 +25,7 @@ export const authOptions: AuthOptions = {
         email: { label: 'email', type: 'text' },
         password: { label: 'password', type: 'password' }
       },
-      // Necesary comprobation for normal account, error credentials -> unique email ->
-      // compare credentials -> return user
+      // Authorization logic for normal account credentials
       async authorize(credentials) {
         if(!credentials?.email || !credentials?.password) throw new Error('Invalid Credentials')
 

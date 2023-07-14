@@ -1,9 +1,9 @@
-import { usePathname } from "next/navigation"
 import { useMemo } from "react"
-import useConversation from "./useConversation"
+import { usePathname } from "next/navigation"
 import { signOut } from "next-auth/react"
+import useConversation from "./useConversation"
 
-// Get routes for sidebar
+// Get the routes for the sidebar
 const useRoutes = () => {
   const pathname = usePathname()
   const { conversationId } = useConversation()
@@ -11,9 +11,9 @@ const useRoutes = () => {
   const routes = useMemo(() => [
     {
       label: 'Chat',
-      href: '/conversation',
+      href: '/conversations',
       icon: 'chat',
-      active: pathname === '/conversation' || !!conversationId
+      active: pathname === '/conversations' || !!conversationId
     },
     {
       label: 'Users',
