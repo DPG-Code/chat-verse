@@ -6,6 +6,7 @@ import useRoutes from "@/app/hooks/useRoutes"
 
 import DesktopItem from "./DesktopItem"
 import Avatar from "../Avatar"
+import SettingsModal from "./SettingsModal"
 
 interface DesktopSidebarProps {
   currentUser: User
@@ -16,27 +17,34 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
   const [isOpen,setIsOpen] = useState(false)
 
   return (
-    <div className="h-full hidden lg:flex">
-      <nav>
-        <ul className="flex flex-col items-center justify-center">
-          {
-            routes.map((route) => (
-              <DesktopItem
-                key={route.label}
-                label={route.label}
-                href={route.href}
-                icon={route.icon}
-                active={route.active}
-                onClick={route.onClick}
-              />
-            ))
-          }
-        </ul>
-      </nav>
-      <div onClick={() => setIsOpen(true)}>
-        <Avatar user={currentUser} />
+    <>
+      <SettingsModal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        currentUser={currentUser}
+      />
+      <div className="h-full hidden lg:flex">
+        <nav>
+          <ul className="flex flex-col items-center justify-center">
+            {
+              routes.map((route) => (
+                <DesktopItem
+                  key={route.label}
+                  label={route.label}
+                  href={route.href}
+                  icon={route.icon}
+                  active={route.active}
+                  onClick={route.onClick}
+                />
+              ))
+            }
+          </ul>
+        </nav>
+        <div onClick={() => setIsOpen(true)}>
+          <Avatar user={currentUser} />
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 export default DesktopSidebar
