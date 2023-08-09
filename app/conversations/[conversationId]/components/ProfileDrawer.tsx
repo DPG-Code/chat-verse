@@ -1,13 +1,14 @@
 'use client'
 
 import { useMemo,Fragment,useState } from 'react'
-import { Conversation,User } from "@prisma/client"
 import useOtherUser from "@/app/hooks/useOtherUser"
+import { Conversation,User } from "@prisma/client"
 import { format } from 'date-fns'
 import { Transition,Dialog } from '@headlessui/react'
 
-import Avatar from '@/app/components/Avatar'
 import ConfirmModal from './ConfirmModal'
+import Avatar from '@/app/components/Avatar'
+import AvatarGroup from '@/app/components/AvatarGroup'
 
 interface ProfileDrawerProps {
   data: Conversation & {
@@ -76,12 +77,27 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({ data,isOpen,onClose }) =>
                   >
                     Close panel
                   </button>
-                  <Avatar user={otherUser} />
+                  {data.isGroup ? (
+                    <AvatarGroup users={data.users} />
+                  ) : (
+                    <Avatar user={otherUser} />
+                  )
+                  }
                   <strong>{title}</strong>
                   <p>{statusText}</p>
-                  <div className="cursor-pointer" onClick={() => setConfirmOpen(true)}>
+                  <div className='cursor-pointer' onClick={() => setConfirmOpen(true)}>
                     <div>delete conversation</div>
                   </div>
+                  {/* Information members group */}
+                  {data.isGroup && (
+                    <div>
+                      <dt className='text-sm sm:w-40 sm:flex-shrink-0'>Emails</dt>
+                      <dd className='mt-2 text-sm sm:col-span-2'>
+                        {data.users.map((user) => user.email).join(', ')}
+                      </dd>
+                    </div>
+                  )}
+                  {/* Information no group */}
                   {!data.isGroup && (
                     <div>
                       <dt className='text-sm sm:w-40 sm:flex-shrink-0'>Email</dt>

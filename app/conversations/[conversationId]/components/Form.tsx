@@ -34,11 +34,11 @@ const Form = () => {
   }
 
   return (
-    <div className="w-full flex">
+    <div className='w-full flex'>
       <CldUploadButton
         options={{ maxFiles: 1 }}
         onUpload={handleUpload}
-        uploadPreset="xfby10x8"
+        uploadPreset='xfby10x8'
       >
         <p>photo</p>
       </CldUploadButton>
@@ -50,7 +50,7 @@ const Form = () => {
           required
           placeholder='Write a message'
         />
-        <button type="submit">
+        <button type='submit'>
           send
         </button>
       </form>

@@ -79,7 +79,7 @@ const AuthForm = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4">
+    <div className='flex flex-col items-center justify-center gap-4'>
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-center justify-center gap-4">
         {variant === 'REGISTER' && (
           <Input
@@ -93,7 +93,7 @@ const AuthForm = () => {
         <Input
           id='email'
           label='Email'
-          type="email"
+          type='email'
           register={register}
           errors={errors}
           disabled={isLoading}
@@ -101,7 +101,7 @@ const AuthForm = () => {
         <Input
           id='password'
           label='Password'
-          type="password"
+          type='password'
           register={register}
           errors={errors}
           disabled={isLoading}
@@ -114,22 +114,22 @@ const AuthForm = () => {
           {variant === 'LOGIN' ? 'Sign In' : 'Register'}
         </Button>
       </form>
-      <span className="text-xs text-center text-gray-500">Or continue with</span>
-      <div className="w-full flex items-center justify-center gap-2">
+      <span className='text-xs text-center text-gray-500'>Or continue with</span>
+      <div className='w-full flex items-center justify-center gap-2'>
         <AuthSocialButton
-          icon="google"
+          icon='google'
           onClick={() => soacialAction('google')}
         />
         <AuthSocialButton
-          icon="github"
+          icon='github'
           onClick={() => soacialAction('github')}
         />
       </div>
-      <div className="w-full flex items-center justify-center gap-2">
+      <div className='w-full flex items-center justify-center gap-2'>
         <p className='text-center text-gray-500'>{variant === 'LOGIN' ? 'New to ChatVerse?' : 'Already have an account?'}</p>
         <button
           onClick={toggleVariant}
-          className="py-1 px-4 flex items-center justify-center"
+          className='py-1 px-4 flex items-center justify-center'
         >
           {variant === 'LOGIN' ? 'Create an account' : 'Login'}
         </button>

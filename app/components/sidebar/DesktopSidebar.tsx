@@ -23,9 +23,9 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
         onClose={() => setIsOpen(false)}
         currentUser={currentUser}
       />
-      <div className="h-full hidden lg:flex">
+      <div className='h-full hidden lg:flex'>
         <nav>
-          <ul className="flex flex-col items-center justify-center">
+          <ul className='flex flex-col items-center justify-center'>
             {
               routes.map((route) => (
                 <DesktopItem

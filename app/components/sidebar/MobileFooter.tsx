@@ -12,8 +12,8 @@ const MobileFooter = () => {
   if (isOpen) return null
 
   return (
-    <div className="flex items-end justify-end lg:hidden">
-      <ul className="flex flex-col items-center justify-center">
+    <div className='flex items-end justify-end lg:hidden'>
+      <ul className='flex flex-col items-center justify-center'>
         {
           routes.map((route) => (
             <MobileItem

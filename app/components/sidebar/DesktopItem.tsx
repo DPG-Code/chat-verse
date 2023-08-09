@@ -26,7 +26,7 @@ const DesktopItem: React.FC<DesktopItemProps> = ({ label,href,icon,active,onClic
         )}
       >
         <span>{icon}</span>
-        <strong className="sr-only">{label}</strong>
+        <strong className='sr-only'>{label}</strong>
       </Link>
     </li>
   )

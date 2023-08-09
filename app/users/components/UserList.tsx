@@ -1,6 +1,7 @@
-"use client"
+'use client'
 
 import { User } from "@prisma/client"
+
 import UserBox from "./UserBox"
 
 interface UserListProps {
@@ -9,9 +10,9 @@ interface UserListProps {
 
 const UserList: React.FC<UserListProps> = ({ items }) => {
   return (
-    <div className="flex flex-col">
+    <div className='flex flex-col'>
       <strong>People</strong>
-      <div className="flex flex-col">
+      <div className='flex flex-col'>
         {
           items.map((item) => (
             <UserBox

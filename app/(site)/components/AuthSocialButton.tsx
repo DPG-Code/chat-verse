@@ -6,9 +6,9 @@ interface AuthSocialButtonProps {
 const AuthSocialButton: React.FC<AuthSocialButtonProps> = ({ icon,onClick }) => {
   return (
     <button
-      type="button"
+      type='button'
       onClick={onClick}
-      className="py-1 px-4 flex items-center justify-center"
+      className='py-1 px-4 flex items-center justify-center'
     >
       {icon}
     </button>

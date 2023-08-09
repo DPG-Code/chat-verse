@@ -20,7 +20,7 @@ const MessageInput: React.FC<MessageInputProps> = ({
   placeholder
 }) => {
   return (
-    <div className="w-full">
+    <div className='w-full'>
       <input
         id={id}
         type={type}

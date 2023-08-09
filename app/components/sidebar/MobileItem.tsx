@@ -26,7 +26,7 @@ const MobileItem: React.FC<MobileItemProps> = ({ label,href,icon,active,onClick 
         )}
       >
         <span>{icon}</span>
-        <strong className="sr-only">{label}</strong>
+        <strong className='sr-only'>{label}</strong>
       </Link>
     </li>
   )

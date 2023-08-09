@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useCallback,useState } from "react"
 import { useRouter } from "next/navigation"
@@ -25,13 +25,18 @@ const UserBox: React.FC<UserBoxProps> = ({ data }) => {
   },[data.id,router])
 
   return (
-    <div
-      className="flex gap-2"
-      onClick={handleClick}
-    >
-      <Avatar user={data} />
-      <p>{data.name}</p>
-    </div>
+    <>
+      {isLoading && (
+        <p>loading...</p>
+      )}
+      <div
+        className='flex gap-2'
+        onClick={handleClick}
+      >
+        <Avatar user={data} />
+        <p>{data.name}</p>
+      </div>
+    </>
   )
 }
 export default UserBox

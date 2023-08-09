@@ -39,9 +39,9 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({ isOpen,onClose }) => {
       isOpen={isOpen}
       onClose={onClose}
     >
-      <div className="sm:flex sm:items-start">
-        <div className="flex flex-col">
-          <Dialog.Title as="h3">
+      <div className='sm:flex sm:items-start'>
+        <div className='flex flex-col'>
+          <Dialog.Title as='h3'>
             Delete conversation
           </Dialog.Title>
           <p>Are you sure you want to delete this conversation? This action cannot be undone.</p>

@@ -1,12 +1,14 @@
 'use client'
 
+import { useState } from "react"
 import { useSession } from "next-auth/react"
-import { FullMessageType } from "@/app/types"
 import Image from "next/image"
 import clsx from "clsx"
 import { format } from "date-fns"
+import { FullMessageType } from "@/app/types"
 
 import Avatar from "@/app/components/Avatar"
+import ImageModal from "./ImageModal"
 
 interface MessageBoxPops {
   data: FullMessageType
@@ -15,6 +17,7 @@ interface MessageBoxPops {
 
 const MessageBox: React.FC<MessageBoxPops> = ({ data,isLast }) => {
   const session = useSession()
+  const [imageModalOpen,setImageModalOpen] = useState(false)
 
   // Check if the message is sent by the current user
   const isOwn = session.data?.user?.email === data.sender.email
@@ -55,13 +58,19 @@ const MessageBox: React.FC<MessageBoxPops> = ({ data,isLast }) => {
           {format(new Date(data.createdAt),'p')}
         </div>
         <div className={message}>
+          <ImageModal
+            isOpen={imageModalOpen}
+            src={data.image}
+            onClose={() => setImageModalOpen(false)}
+          />
           {
             data.image ? (
               <Image
+                onClick={() => setImageModalOpen(true)}
                 src={data.image}
                 width='288'
                 height='288'
-                className="object-cover cursor-pointer"
+                className='object-cover cursor-pointer'
                 alt='image'
               />
             ) : (
