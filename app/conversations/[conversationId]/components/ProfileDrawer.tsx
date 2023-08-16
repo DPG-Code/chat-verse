@@ -5,6 +5,7 @@ import useOtherUser from "@/app/hooks/useOtherUser"
 import { Conversation,User } from "@prisma/client"
 import { format } from 'date-fns'
 import { Transition,Dialog } from '@headlessui/react'
+import useActiveList from '@/app/hooks/useActiveList'
 
 import ConfirmModal from './ConfirmModal'
 import Avatar from '@/app/components/Avatar'
@@ -22,6 +23,11 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({ data,isOpen,onClose }) =>
   const otherUser = useOtherUser(data)
   const [confirmOpen,setConfirmOpen] = useState(false)
 
+  // Get the members list from the useActiveList store
+  const { members } = useActiveList()
+  // Check if the user is active (in the members list)
+  const isActive = members.indexOf(otherUser.email!) !== -1
+
   // Get the formatted date in a readable format
   const joinedData = useMemo(() => {
     return format(new Date(otherUser.createdAt),'PP')
@@ -38,8 +44,8 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({ data,isOpen,onClose }) =>
       return `${data.users.length} members`
     }
 
-    return 'Active'
-  },[data.isGroup,data.users.length])
+    return isActive ? 'Active' : 'Offline'
+  },[data.isGroup,data.users.length,isActive])
 
   return (
     <>

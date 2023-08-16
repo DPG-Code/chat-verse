@@ -28,8 +28,8 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({ data,seleted }) => {
 
   // Get last message with the user
   const lastMessage = useMemo(() => {
-    const message = data.messages || []
-    return message[data.messages.length - 1]
+    const messages = data.messages || []
+    return messages[messages.length - 1]
   },[data.messages])
 
   // Get the user's email

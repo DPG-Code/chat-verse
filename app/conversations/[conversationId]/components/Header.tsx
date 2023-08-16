@@ -4,6 +4,7 @@ import { useMemo,useState } from "react"
 import Link from "next/link"
 import useOtherUser from "@/app/hooks/useOtherUser"
 import { Conversation,User } from "@prisma/client"
+import useActiveList from "@/app/hooks/useActiveList"
 
 import Avatar from "@/app/components/Avatar"
 import ProfileDrawer from "./ProfileDrawer"
@@ -19,13 +20,18 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
   const otherUser = useOtherUser(conversation)
   const [drawerOpen,setDrawerOpen] = useState(false)
 
+  // Get the members list from the useActiveList store
+  const { members } = useActiveList()
+  // Check if the user is active (in the members list)
+  const isActive = members.indexOf(otherUser.email!) !== -1
+
   const statusText = useMemo(() => {
     if (conversation.isGroup) {
       return `${conversation.users.length} members`
     }
 
-    return 'Active'
-  },[conversation])
+    return isActive ? 'Active' : 'Offline'
+  },[conversation,isActive])
 
   return (
     <>
