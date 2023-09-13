@@ -35,7 +35,7 @@ const Form = () => {
   }
 
   return (
-    <footer className='p-4 w-full flex gap-4'>
+    <footer className='mt-auto p-6 w-full flex gap-6'>
       <CldUploadButton
         options={{ maxFiles: 1 }}
         onUpload={handleUpload}
@@ -43,7 +43,7 @@ const Form = () => {
       >
         <IconPhoto />
       </CldUploadButton>
-      <form className='w-full flex gap-2' onSubmit={handleSubmit(onSubmit)}>
+      <form className='w-full flex gap-4' onSubmit={handleSubmit(onSubmit)}>
         <MessageInput
           id='message'
           register={register}

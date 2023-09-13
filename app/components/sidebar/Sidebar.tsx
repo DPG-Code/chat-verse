@@ -13,7 +13,7 @@ export default async function Sidebar({
   return (
     <div className='h-full w-full flex flex-col items-start lg:flex-row'>
       <DesktopSidebar currentUser={currentUser!} />
-      <MobileFooter />
+      <MobileFooter currentUser={currentUser!} />
       {children}
     </div>
   )

@@ -88,16 +88,16 @@ const ConversationList: React.FC<ConversationListProps> = ({ initialItems,users 
         onClose={() => setIsModalOpen(false)}
       />
       <section className={clsx(
-        'p-4 w-full flex flex-col gap-4',
+        'p-12 w-full flex flex-col gap-10',
         isOpen ? 'hidden' : 'block'
       )}>
         <header className='flex items-center justify-between'>
-          <h3 className='text-xl font-semibold'>Messages</h3>
+          <h3 className='text-2xl font-bold lg:text-4xl'>Messages</h3>
           <button onClick={() => setIsModalOpen(true)}>
             <IconGroup />
           </button>
         </header>
-        <div className='flex flex-col gap-2'>
+        <div className='w-full flex flex-col gap-6'>
           {
             items.map((item) => (
               <ConversationBox

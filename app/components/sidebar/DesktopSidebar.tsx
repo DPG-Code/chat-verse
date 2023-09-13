@@ -23,9 +23,9 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
         onClose={() => setIsOpen(false)}
         currentUser={currentUser}
       />
-      <aside className='p-4 h-full hidden lg:flex lg:flex-col lg:justify-between lg:items-center'>
+      <aside className='px-10 py-12 h-full hidden lg:flex lg:flex-col lg:justify-between lg:items-center'>
         <nav>
-          <ul className='flex flex-col items-center gap-4'>
+          <ul className='flex flex-col items-center gap-12'>
             {
               routes.map((route) => (
                 <DesktopItem

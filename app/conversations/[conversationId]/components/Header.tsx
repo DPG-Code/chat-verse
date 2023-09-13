@@ -41,9 +41,9 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
         isOpen={drawerOpen}
         onClose={() => setDrawerOpen(false)}
       />
-      <header className='p-4 w-full flex gap-4'>
+      <header className='p-6 w-full flex gap-6 lg:py-12'>
         <Link
-          className='lg:hidden'
+          className='flex items-center lg:hidden'
           href='/conversations'
         >
           <IconBack />
@@ -56,8 +56,8 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
           )
           }
           <div className='flex flex-col'>
-            <h4 className='font-semibold'>{conversation.name || otherUser.name}</h4>
-            <span className='text-sm font-medium text-gray-600'>{statusText}</span>
+            <h4 className='text-xl font-semibold'>{conversation.name || otherUser.name}</h4>
+            <span className='text-sm font-medium text-gray-500'>{statusText}</span>
           </div>
           <button className='ml-auto' onClick={() => setDrawerOpen(true)}>
             <IconOptions />

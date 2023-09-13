@@ -30,21 +30,21 @@ const MessageBox: React.FC<MessageBoxPops> = ({ data,isLast }) => {
 
   // Define CSS classes based on message ownership and type
   const container = clsx(
-    'w-full flex items-start gap-4 p-4',
+    'py-4 w-full flex items-start gap-4',
     isOwn && 'justify-end'
   )
 
   const avatar = clsx(isOwn && 'order-2')
 
   const body = clsx(
-    'flex flex-col gap-2',
-    isOwn && 'justify-end'
+    'flex flex-col gap-4',
+    isOwn && 'justify-end items-end'
   )
 
   const message = clsx(
-    'text-sm w-fit overflow-hidden',
+    'text-lg w-fit overflow-hidden',
     isOwn ? 'bg-sky-500 text-white' : 'bg-gray-200',
-    data.image ? 'rounded-md p-0' : 'rounded-full p-2'
+    data.image ? 'rounded-lg p-0' : 'rounded-full p-2 px-4'
   )
 
   return (
@@ -53,8 +53,8 @@ const MessageBox: React.FC<MessageBoxPops> = ({ data,isLast }) => {
         <Avatar user={data.sender} />
       </aside>
       <section className={body}>
-        <header className='flex items-center justify-start gap-2'>
-          <p className='font-semibold'>{data.sender.name}</p>
+        <header className='flex items-center justify-start gap-4'>
+          <p className='text-lg font-semibold'>{data.sender.name}</p>
           <span className='text-xs text-gray-500'>{format(new Date(data.createdAt),'p')}</span>
         </header>
         <div className={message}>

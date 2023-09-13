@@ -15,7 +15,7 @@ const ImageModal: React.FC<ImageModalProps> = ({ isOpen,src,onClose }) => {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <div className='w-80 h-80 bg-white'>
+      <div className='w-72 h-72 lg:w-[420px] lg:h-[420px]'>
         <Image
           fill
           alt='chat'

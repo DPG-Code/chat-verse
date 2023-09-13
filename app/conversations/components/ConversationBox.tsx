@@ -61,7 +61,7 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({ data,seleted }) => {
   return (
     <div
       className={clsx(
-        'w-72 flex items-center gap-4 cursor-pointer hover:bg-gray-400',
+        'w-full flex items-center gap-4 cursor-pointer lg:w-96',
         seleted && 'bg-gray-400'
       )}
       onClick={handleClick}
@@ -84,7 +84,7 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({ data,seleted }) => {
         <footer className='flex items-center justify-between'>
           <p className={clsx(
             'text-sm truncate',
-            hasSeen ? 'text-gray-500' : 'text-black'
+            hasSeen ? 'text-gray-600' : 'text-black'
           )}>
             {lastMessageText}
           </p>
