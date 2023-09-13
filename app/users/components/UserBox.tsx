@@ -30,11 +30,11 @@ const UserBox: React.FC<UserBoxProps> = ({ data }) => {
         <p>loading...</p>
       )}
       <div
-        className='flex gap-2'
+        className='cursor-pointer flex gap-2'
         onClick={handleClick}
       >
         <Avatar user={data} />
-        <p>{data.name}</p>
+        <p className='font-semibold'>{data.name}</p>
       </div>
     </>
   )

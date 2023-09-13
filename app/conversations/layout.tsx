@@ -15,13 +15,13 @@ export default async function ConversationLayout({
   return (
     // @ts-ignore Server Component
     <Sidebar>
-      <div className='h-full'>
+      <main className='h-full w-full flex'>
         <ConversationList
           initialItems={conversation}
           users={users}
         />
         {children}
-      </div>
+      </main>
     </Sidebar>
   )
 }

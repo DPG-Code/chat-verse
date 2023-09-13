@@ -12,6 +12,7 @@ import { find } from "lodash"
 
 import ConversationBox from "./ConversationBox"
 import GroupChatModal from "./GroupChatModal"
+import { IconGroup } from "@/app/components/Icons"
 
 interface ConversationListProps {
   initialItems: FullConversationType[]
@@ -86,12 +87,16 @@ const ConversationList: React.FC<ConversationListProps> = ({ initialItems,users 
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
-      <div className={clsx(
-        'flex flex-col',
+      <section className={clsx(
+        'p-4 w-full flex flex-col gap-4',
         isOpen ? 'hidden' : 'block'
       )}>
-        <strong>Messages</strong>
-        <div onClick={() => setIsModalOpen(true)}>crear grupo</div>
+        <header className='flex items-center justify-between'>
+          <h3 className='text-xl font-semibold'>Messages</h3>
+          <button onClick={() => setIsModalOpen(true)}>
+            <IconGroup />
+          </button>
+        </header>
         <div className='flex flex-col gap-2'>
           {
             items.map((item) => (
@@ -103,7 +108,7 @@ const ConversationList: React.FC<ConversationListProps> = ({ initialItems,users 
             ))
           }
         </div>
-      </div>
+      </section>
     </>
   )
 }

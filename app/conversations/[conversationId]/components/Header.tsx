@@ -9,6 +9,7 @@ import useActiveList from "@/app/hooks/useActiveList"
 import Avatar from "@/app/components/Avatar"
 import ProfileDrawer from "./ProfileDrawer"
 import AvatarGroup from "@/app/components/AvatarGroup"
+import { IconBack,IconOptions } from "@/app/components/Icons"
 
 interface HeaderProps {
   conversation: Conversation & {
@@ -40,14 +41,14 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
         isOpen={drawerOpen}
         onClose={() => setDrawerOpen(false)}
       />
-      <div className='w-full flex'>
+      <header className='p-4 w-full flex gap-4'>
         <Link
           className='lg:hidden'
           href='/conversations'
         >
-          Back
+          <IconBack />
         </Link>
-        <div className='flex gap-2'>
+        <aside className='w-full flex items-center gap-4'>
           {conversation.isGroup ? (
             <AvatarGroup users={conversation.users} />
           ) : (
@@ -55,14 +56,14 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
           )
           }
           <div className='flex flex-col'>
-            <strong>{conversation.name || otherUser.name}</strong>
-            {statusText}
+            <h4 className='font-semibold'>{conversation.name || otherUser.name}</h4>
+            <span className='text-sm font-medium text-gray-600'>{statusText}</span>
           </div>
-          <button onClick={() => setDrawerOpen(true)}>
-            options
+          <button className='ml-auto' onClick={() => setDrawerOpen(true)}>
+            <IconOptions />
           </button>
-        </div>
-      </div>
+        </aside>
+      </header>
     </>
   )
 }

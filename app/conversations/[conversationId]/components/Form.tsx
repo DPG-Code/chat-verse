@@ -6,6 +6,7 @@ import useConversation from "@/app/hooks/useConversation"
 import { CldUploadButton } from "next-cloudinary"
 
 import MessageInput from "./MessageInput"
+import { IconPhoto,IconSend } from "@/app/components/Icons"
 
 const Form = () => {
   const { conversationId } = useConversation()
@@ -34,15 +35,15 @@ const Form = () => {
   }
 
   return (
-    <div className='w-full flex'>
+    <footer className='p-4 w-full flex gap-4'>
       <CldUploadButton
         options={{ maxFiles: 1 }}
         onUpload={handleUpload}
         uploadPreset='xfby10x8'
       >
-        <p>photo</p>
+        <IconPhoto />
       </CldUploadButton>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className='w-full flex gap-2' onSubmit={handleSubmit(onSubmit)}>
         <MessageInput
           id='message'
           register={register}
@@ -51,10 +52,10 @@ const Form = () => {
           placeholder='Write a message'
         />
         <button type='submit'>
-          send
+          <IconSend />
         </button>
       </form>
-    </div>
+    </footer>
   )
 }
 export default Form

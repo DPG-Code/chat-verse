@@ -12,21 +12,23 @@ const MobileFooter = () => {
   if (isOpen) return null
 
   return (
-    <div className='flex items-end justify-end lg:hidden'>
-      <ul className='flex flex-col items-center justify-center'>
-        {
-          routes.map((route) => (
-            <MobileItem
-              key={route.label}
-              label={route.label}
-              href={route.href}
-              icon={route.icon}
-              active={route.active}
-              onClick={route.onClick}
-            />
-          ))
-        }
-      </ul>
+    <div className='p-4 w-full order-last lg:hidden'>
+      <nav>
+        <ul className='flex items-center justify-center gap-4'>
+          {
+            routes.map((route) => (
+              <MobileItem
+                key={route.label}
+                label={route.label}
+                href={route.href}
+                icon={route.icon}
+                active={route.active}
+                onClick={route.onClick}
+              />
+            ))
+          }
+        </ul>
+      </nav>
     </div>
   )
 }

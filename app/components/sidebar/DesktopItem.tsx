@@ -2,6 +2,8 @@
 
 import clsx from "clsx"
 import Link from "next/link"
+import { IconsNavbar } from "../IconsNavbar"
+import { IconNavbarType } from "@/app/types"
 
 interface DesktopItemProps {
   label: string
@@ -25,7 +27,7 @@ const DesktopItem: React.FC<DesktopItemProps> = ({ label,href,icon,active,onClic
           active && 'text-black'
         )}
       >
-        <span>{icon}</span>
+        <IconsNavbar icon={icon as IconNavbarType} />
         <strong className='sr-only'>{label}</strong>
       </Link>
     </li>

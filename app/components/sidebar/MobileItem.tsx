@@ -2,6 +2,8 @@
 
 import clsx from "clsx"
 import Link from "next/link"
+import { IconsNavbar } from "../IconsNavbar"
+import { IconNavbarType } from "@/app/types"
 
 interface MobileItemProps {
   label: string
@@ -25,7 +27,7 @@ const MobileItem: React.FC<MobileItemProps> = ({ label,href,icon,active,onClick 
           active && 'text-black'
         )}
       >
-        <span>{icon}</span>
+        <IconsNavbar icon={icon as IconNavbarType} />
         <strong className='sr-only'>{label}</strong>
       </Link>
     </li>

@@ -23,9 +23,9 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
         onClose={() => setIsOpen(false)}
         currentUser={currentUser}
       />
-      <div className='h-full hidden lg:flex'>
+      <aside className='p-4 h-full hidden lg:flex lg:flex-col lg:justify-between lg:items-center'>
         <nav>
-          <ul className='flex flex-col items-center justify-center'>
+          <ul className='flex flex-col items-center gap-4'>
             {
               routes.map((route) => (
                 <DesktopItem
@@ -40,10 +40,10 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
             }
           </ul>
         </nav>
-        <div onClick={() => setIsOpen(true)}>
+        <footer className='cursor-pointer' onClick={() => setIsOpen(true)}>
           <Avatar user={currentUser} />
-        </div>
-      </div>
+        </footer>
+      </aside>
     </>
   )
 }

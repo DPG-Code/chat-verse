@@ -2,6 +2,7 @@
 
 import { Fragment } from "react"
 import { Dialog,Transition } from "@headlessui/react"
+import { IconClose } from "./Icons"
 
 interface ModalProps {
   isOpen?: boolean
@@ -45,7 +46,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen,onClose,children }) => {
                   className='absolute top-0 right-0 hidden sm:block'
                   onClick={onClose}
                 >
-                  Close
+                  <IconClose />
                 </button>
                 {children}
               </Dialog.Panel>

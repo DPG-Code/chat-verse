@@ -15,12 +15,12 @@ const ImageModal: React.FC<ImageModalProps> = ({ isOpen,src,onClose }) => {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <div className='w-80 h-80'>
+      <div className='w-80 h-80 bg-white'>
         <Image
           fill
           alt='chat'
           src={src}
-          className='object-cover'
+          className='w-full object-contain'
         />
       </div>
     </Modal>

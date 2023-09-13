@@ -12,6 +12,7 @@ import { User } from "@prisma/client"
 import Modal from "../Modal"
 import Input from "../inputs/Input"
 import Button from "../Button"
+import { IconEdit } from "../Icons"
 
 interface SettingsModalProps {
   isOpen?: boolean
@@ -66,9 +67,9 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen,onClose,currentUse
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className='flex flex-col items-center justify-center'>
-          <h2>Profile</h2>
-          <p>Edit your public information</p>
+        <div className='flex flex-col items-center justify-center gap-2'>
+          <h2 className='text-2xl font-semibold'>Profile</h2>
+          <p className='text-neutral-600'>Edit your public information</p>
           <Input
             disabled={isLoading}
             label='name'
@@ -77,7 +78,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen,onClose,currentUse
             register={register}
             required
           />
-          <div className='flex flex-col gap-2'>
+          <div className='flex flex-col items-center justify-center gap-2'>
             <label>Photo</label>
             <Image
               width='48'
@@ -95,7 +96,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen,onClose,currentUse
                 secondary
                 type='button'
               >
-                Change
+                <IconEdit />
               </Button>
             </CldUploadButton>
           </div>

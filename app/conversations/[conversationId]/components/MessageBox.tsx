@@ -30,7 +30,7 @@ const MessageBox: React.FC<MessageBoxPops> = ({ data,isLast }) => {
 
   // Define CSS classes based on message ownership and type
   const container = clsx(
-    'flex gap-3 p-4',
+    'w-full flex items-start gap-4 p-4',
     isOwn && 'justify-end'
   )
 
@@ -49,14 +49,14 @@ const MessageBox: React.FC<MessageBoxPops> = ({ data,isLast }) => {
 
   return (
     <div className={container}>
-      <div className={avatar}>
+      <aside className={avatar}>
         <Avatar user={data.sender} />
-      </div>
-      <div className={body}>
-        <div className='flex items-center gap-1'>
-          {data.sender.name}
-          {format(new Date(data.createdAt),'p')}
-        </div>
+      </aside>
+      <section className={body}>
+        <header className='flex items-center justify-start gap-2'>
+          <p className='font-semibold'>{data.sender.name}</p>
+          <span className='text-xs text-gray-500'>{format(new Date(data.createdAt),'p')}</span>
+        </header>
         <div className={message}>
           <ImageModal
             isOpen={imageModalOpen}
@@ -80,10 +80,10 @@ const MessageBox: React.FC<MessageBoxPops> = ({ data,isLast }) => {
         </div>
         {
           isLast && isOwn && seenList.length > 0 && (
-            <p>Seen by: {seenList}</p>
+            <p className='mt-2 text-xs text-gray-500'>Seen by: {seenList}</p>
           )
         }
-      </div>
+      </section>
     </div>
   )
 }

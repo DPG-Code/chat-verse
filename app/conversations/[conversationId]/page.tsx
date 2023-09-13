@@ -16,14 +16,14 @@ const ConversationId = async ({ params }: { params: IParams }) => {
 
   if (!conversation) {
     return (
-      <div className='h-full'>
+      <div className='w-full h-full'>
         <EmptyState />
       </div>
     )
   }
 
   return (
-    <div className='h-full'>
+    <div className='w-full h-full max-h-screen'>
       <Header conversation={conversation} />
       <Body initialMessages={messages} />
       <Form />

@@ -10,6 +10,7 @@ import { FullConversationType } from "@/app/types"
 
 import Avatar from "@/app/components/Avatar"
 import AvatarGroup from "@/app/components/AvatarGroup"
+import { IconSeen } from "@/app/components/Icons"
 
 interface ConversationBoxProps {
   data: FullConversationType
@@ -60,7 +61,7 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({ data,seleted }) => {
   return (
     <div
       className={clsx(
-        'flex gap-2 hover:bg-gray-400',
+        'w-72 flex items-center gap-4 cursor-pointer hover:bg-gray-400',
         seleted && 'bg-gray-400'
       )}
       onClick={handleClick}
@@ -71,20 +72,27 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({ data,seleted }) => {
         <Avatar user={otherUser} />
       )
       }
-      <div className='flex flex-col gap-1'>
-        <strong className='truncate'>{data.name || otherUser.name}</strong>
-        {
-          lastMessage?.createdAt && (
-            <p>{format(new Date(lastMessage.createdAt),'p')}</p>
-          )
-        }
-        <p className={clsx(
-          'truncate',
-          hasSeen ? 'text-gray-600' : 'text-black'
-        )}>
-          {lastMessageText}
-        </p>
-      </div>
+      <section className='w-full flex flex-col'>
+        <header className='flex items-center justify-between'>
+          <h5 className='font-semibold truncate'>{data.name || otherUser.name}</h5>
+          {
+            lastMessage?.createdAt && (
+              <p className='text-xs text-gray-500'>{format(new Date(lastMessage.createdAt),'p')}</p>
+            )
+          }
+        </header>
+        <footer className='flex items-center justify-between'>
+          <p className={clsx(
+            'text-sm truncate',
+            hasSeen ? 'text-gray-500' : 'text-black'
+          )}>
+            {lastMessageText}
+          </p>
+          {
+            hasSeen ? <IconSeen status='seen' /> : <IconSeen status='' />
+          }
+        </footer>
+      </section>
     </div>
   )
 }

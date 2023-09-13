@@ -20,14 +20,13 @@ const MessageInput: React.FC<MessageInputProps> = ({
   placeholder
 }) => {
   return (
-    <div className='w-full'>
-      <input
-        id={id}
-        type={type}
-        {...register(id,{ required })}
-        placeholder={placeholder}
-      />
-    </div>
+    <input
+      className='p-2 w-full'
+      id={id}
+      type={type}
+      {...register(id,{ required })}
+      placeholder={placeholder}
+    />
   )
 }
 export default MessageInput
