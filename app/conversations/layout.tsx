@@ -15,7 +15,7 @@ export default async function ConversationLayout({
   return (
     // @ts-ignore Server Component
     <Sidebar>
-      <main className='h-full w-full flex'>
+      <main className='h-full w-full flex lg:pl-32'>
         <ConversationList
           initialItems={conversation}
           users={users}

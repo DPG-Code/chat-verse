@@ -11,7 +11,7 @@ export default async function Sidebar({
   const currentUser = await getCurrentUser()
 
   return (
-    <div className='h-full w-full flex flex-col items-start lg:flex-row'>
+    <div className='h-full w-full flex flex-col items-start relative lg:flex-row'>
       <DesktopSidebar currentUser={currentUser!} />
       <MobileFooter currentUser={currentUser!} />
       {children}

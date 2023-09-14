@@ -21,7 +21,7 @@ const Select: React.FC<SelectProps> = ({ label,disabled,options,onChange,value }
         onChange={onChange}
         isMulti
         options={options}
-        menuPortalTarget={document.body} // To dont have problem with overflow because is a modal
+        // menuPortalTarget={document.body} // To dont have problem with overflow because is a modal
         styles={{
           menuPortal: (base) => ({
             ...base,

@@ -16,7 +16,9 @@ const AvatarGroup: React.FC<AvatarGoupProps> = ({ users = [] }) => {
         slicedMembers.map((member) => (
           <div key={member.id} className='w-full h-full relative'>
             <Image
-              fill
+              className='w-full h-full'
+              width='48'
+              height='48'
               alt='group avatar'
               src={member?.image || '/images/no-profile-picture.png'}
             />

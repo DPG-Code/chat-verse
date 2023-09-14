@@ -13,7 +13,7 @@ export default async function UsersLayout({
   return (
     // @ts-ignore Server Component
     <Sidebar>
-      <main className='h-full w-full flex'>
+      <main className='pb-24 h-full w-full flex lg:pl-32 lg:pb-0'>
         <UserList items={users} />
         {children}
       </main>

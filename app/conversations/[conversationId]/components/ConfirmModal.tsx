@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import useConversation from "@/app/hooks/useConversation"
 import axios from "axios"
 import { toast } from "react-hot-toast"
-import { Dialog } from "@headlessui/react"
+// import { Dialog } from "@headlessui/react"
 
 import Modal from "@/app/components/Modal"
 import Button from "@/app/components/Button"
@@ -39,12 +39,10 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({ isOpen,onClose }) => {
       isOpen={isOpen}
       onClose={onClose}
     >
-      <div className='sm:flex sm:items-start'>
-        <div className='flex flex-col'>
-          <Dialog.Title as='h3'>
-            Delete conversation
-          </Dialog.Title>
-          <p>Are you sure you want to delete this conversation? This action cannot be undone.</p>
+      <section className='flex flex-col items-center justify-center gap-4'>
+        <h5 className='text-2xl font-semibold'>Delete conversation</h5>
+        <p className='text-sm text-gray-500'>Are you sure you want to delete this conversation? This action cannot be undone.</p>
+        <footer className='w-full flex items-center justify-center gap-4'>
           <Button
             disabled={isLoading}
             secondary
@@ -59,8 +57,8 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({ isOpen,onClose }) => {
           >
             Delete
           </Button>
-        </div>
-      </div>
+        </footer>
+      </section>
     </Modal>
   )
 }

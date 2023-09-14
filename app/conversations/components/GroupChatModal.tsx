@@ -63,12 +63,12 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({ users,isOpen,onClose })
       isOpen={isOpen}
       onClose={onClose}
     >
-      <form className='flex flex-col' onSubmit={handleSubmit(onSubmit)}>
-        <h2>Create a chat group</h2>
-        <p>Create a chat with more than 2 people</p>
+      <form className='text-center flex flex-col items-center justify-center gap-6' onSubmit={handleSubmit(onSubmit)}>
+        <h2 className='text-3xl font-bold'>Create a chat group</h2>
+        <p className='text-lg text-gray-500 font-medium'>Create a chat with more than 2 people</p>
         <Input
           register={register}
-          label='name'
+          label='Name'
           id='name'
           disabled={isLoading}
           required
@@ -86,7 +86,7 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({ users,isOpen,onClose })
           })}
           value={members}
         />
-        <div>
+        <footer className='flex items-center justify-center gap-2'>
           <Button
             type='button'
             disabled={isLoading}
@@ -101,7 +101,7 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({ users,isOpen,onClose })
           >
             Create
           </Button>
-        </div>
+        </footer>
       </form>
     </Modal>
   )

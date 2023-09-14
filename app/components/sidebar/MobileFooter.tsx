@@ -27,7 +27,7 @@ const MobileFooter: React.FC<MobileFooterProps> = ({ currentUser }) => {
         onClose={() => setIsModalOpen(false)}
         currentUser={currentUser}
       />
-      <div className='py-10 w-full flex items-center justify-center gap-8 order-last lg:hidden'>
+      <footer className='w-full h-24 flex items-center justify-center gap-8 absolute bottom-0 lg:hidden'>
         <nav>
           <ul className='flex items-center justify-center gap-8'>
             {
@@ -44,10 +44,10 @@ const MobileFooter: React.FC<MobileFooterProps> = ({ currentUser }) => {
             }
           </ul>
         </nav>
-        <footer className='cursor-pointer' onClick={() => setIsModalOpen(true)}>
+        <div className='cursor-pointer' onClick={() => setIsModalOpen(true)}>
           <Avatar user={currentUser} />
-        </footer>
-      </div>
+        </div>
+      </footer>
     </>
   )
 }

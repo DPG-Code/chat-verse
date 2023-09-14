@@ -66,56 +66,51 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen,onClose,currentUse
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className='flex flex-col items-center justify-center gap-2'>
-          <h2 className='text-2xl font-semibold'>Profile</h2>
-          <p className='text-neutral-600'>Edit your public information</p>
+      <form className='text-center flex flex-col items-center justify-center gap-6' onSubmit={handleSubmit(onSubmit)}>
+        <header className='text-center flex flex-col items-center justify-center gap-2'>
+          <h2 className='text-3xl font-bold'>Profile</h2>
+          <p className='text-lg text-gray-500 font-medium'>Edit your public information</p>
           <Input
             disabled={isLoading}
-            label='name'
+            label='Name'
             id='name'
             errors={errors}
             register={register}
             required
           />
-          <div className='flex flex-col items-center justify-center gap-2'>
-            <label>Photo</label>
-            <Image
-              width='48'
-              height='48'
-              alt='Avatar'
-              src={image || currentUser.image || '/images/no-profile-picture.png'}
-            />
-            <CldUploadButton
-              options={{ maxFiles: 1 }}
-              onUpload={handleUpload}
-              uploadPreset='xfby10x8'
-            >
-              <Button
-                disabled={isLoading}
-                secondary
-                type='button'
-              >
-                <IconEdit />
-              </Button>
-            </CldUploadButton>
-          </div>
-          <div className='flex gap-2'>
-            <Button
-              disabled={isLoading}
-              secondary
-              onClick={onClose}
-            >
-              Cancel
-            </Button>
-            <Button
-              disabled={isLoading}
-              type='submit'
-            >
-              Save
-            </Button>
-          </div>
-        </div>
+        </header>
+        <section className='flex flex-col items-center justify-center gap-4'>
+          <label className='text-2xl font-semibold'>Photo</label>
+          <Image
+            className='rounded-full object-cover'
+            width='96'
+            height='96'
+            alt='Avatar'
+            src={image || currentUser.image || '/images/no-profile-picture.png'}
+          />
+          <CldUploadButton
+            options={{ maxFiles: 1 }}
+            onUpload={handleUpload}
+            uploadPreset='xfby10x8'
+          >
+            <IconEdit />
+          </CldUploadButton>
+        </section>
+        <footer className='flex items-center justify-center gap-2'>
+          <Button
+            disabled={isLoading}
+            secondary
+            onClick={onClose}
+          >
+            Cancel
+          </Button>
+          <Button
+            disabled={isLoading}
+            type='submit'
+          >
+            Save
+          </Button>
+        </footer>
       </form>
     </Modal>
   )
