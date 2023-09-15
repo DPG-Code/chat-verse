@@ -15,9 +15,9 @@ const ImageModal: React.FC<ImageModalProps> = ({ isOpen,src,onClose }) => {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <div className='w-72 h-72 grid place-content-center lg:w-[420px] lg:h-[420px]'>
+      <div className='p-6 w-72 h-72 flex items-center justify-center lg:w-[420px] lg:h-[420px]'>
         <Image
-          className='w-auto h-auto object-contain'
+          className='w-auto h-full object-contain rounded-xl'
           width='420'
           height='420'
           alt='chat'

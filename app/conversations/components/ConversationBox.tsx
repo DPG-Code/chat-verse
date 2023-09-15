@@ -61,8 +61,8 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({ data,seleted }) => {
   return (
     <div
       className={clsx(
-        'w-full flex items-center gap-4 cursor-pointer lg:w-96',
-        seleted && 'bg-gray-400'
+        'p-4 w-full flex items-center gap-6 cursor-pointer rounded-xl hover:bg-neutral-800 lg:w-96 2xl:w-[620px] 2xl:p-6',
+        seleted && 'bg-gray-800'
       )}
       onClick={handleClick}
     >
@@ -74,17 +74,17 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({ data,seleted }) => {
       }
       <section className='w-full flex flex-col'>
         <header className='flex items-center justify-between'>
-          <h5 className='font-semibold truncate'>{data.name || otherUser.name}</h5>
+          <h5 className='text-white text-base font-semibold truncate 2xl:text-xl'>{data.name || otherUser.name}</h5>
           {
             lastMessage?.createdAt && (
-              <p className='text-xs text-gray-500'>{format(new Date(lastMessage.createdAt),'p')}</p>
+              <p className='text-xs text-neutral-600 2xl:text-base'>{format(new Date(lastMessage.createdAt),'p')}</p>
             )
           }
         </header>
         <footer className='flex items-center justify-between'>
           <p className={clsx(
-            'text-sm truncate',
-            hasSeen ? 'text-gray-600' : 'text-black'
+            'text-sm truncate 2xl:text-lg',
+            hasSeen ? 'text-neutral-500' : 'text-white'
           )}>
             {lastMessageText}
           </p>

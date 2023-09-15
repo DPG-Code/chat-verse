@@ -92,12 +92,12 @@ const ConversationList: React.FC<ConversationListProps> = ({ initialItems,users 
         isOpen ? 'hidden' : 'block'
       )}>
         <header className='flex items-center justify-between'>
-          <h3 className='text-2xl font-bold lg:text-4xl'>Messages</h3>
-          <button onClick={() => setIsModalOpen(true)}>
+          <h3 className='text-white text-2xl font-bold lg:text-4xl'>Messages</h3>
+          <button className='text-white' onClick={() => setIsModalOpen(true)}>
             <IconGroup />
           </button>
         </header>
-        <div className='w-full flex flex-col gap-6'>
+        <div className='h-full w-full flex flex-col overflow-y-scroll'>
           {
             items.map((item) => (
               <ConversationBox

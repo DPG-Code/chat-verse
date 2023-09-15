@@ -13,8 +13,8 @@ interface SelectProps {
 // Select component to add people in a group
 const Select: React.FC<SelectProps> = ({ label,disabled,options,onChange,value }) => {
   return (
-    <div className='z-[100]'>
-      <label>{label}</label>
+    <div className='flex flex-col items-center justify-center gap-2 z-50 lg:gap-3'>
+      <label className='text-lg text-white font-semibold lg:text-2xl'>{label}</label>
       <ReactSelect
         isDisabled={disabled}
         value={value}
@@ -29,7 +29,7 @@ const Select: React.FC<SelectProps> = ({ label,disabled,options,onChange,value }
           })
         }}
         classNames={{
-          control: () => 'text-sm'
+          control: () => 'text-base lg:text-2xl'
         }}
       />
     </div>

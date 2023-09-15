@@ -21,7 +21,7 @@ const MessageInput: React.FC<MessageInputProps> = ({
 }) => {
   return (
     <input
-      className='p-2 w-full'
+      className='py-2 px-6 border-0 outline-0 w-full text-lg font-medium bg-neutral-800 text-white placeholder:text-neutral-400 rounded-xl lg:text-xl lg:py-3 lg:px-8'
       id={id}
       type={type}
       {...register(id,{ required })}

@@ -4,7 +4,8 @@ import clsx from "clsx"
 import { FieldErrors,FieldValues,UseFormRegister } from "react-hook-form"
 
 interface InputProps {
-  label: string
+  label?: string
+  placeholder?: string
   id: string
   type?: string
   required?: boolean
@@ -15,6 +16,7 @@ interface InputProps {
 
 const Input: React.FC<InputProps> = ({
   label,
+  placeholder,
   id,
   type,
   required,
@@ -24,18 +26,21 @@ const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <div className='flex flex-col'>
-      <label htmlFor={id}>
-        {label}
-      </label>
+      {
+        label && <label className='mb-1 text-neutral-400 font-semibold' htmlFor={id}>
+          {label}
+        </label>
+      }
       <input
         id={id}
         type={type}
         autoComplete={id}
         disabled={disabled}
         {...register(id,{ required })}
+        placeholder={placeholder}
         className={clsx(
-          'w-full ring-1 ring-inset ring-gray-300 focus:ring-black',
-          errors[id] && 'focus:ring-rose-500',
+          'py-2 px-6 border-0	outline-0 w-full min-w-[260px] text-lg font-medium bg-neutral-800 text-white placeholder:text-neutral-400 rounded-xl lg:w-96',
+          errors[id] && 'focus:ring-offset-2 focus:ring-offset-red-800',
           disabled && 'opacity-50 cursor-default'
         )}
       />

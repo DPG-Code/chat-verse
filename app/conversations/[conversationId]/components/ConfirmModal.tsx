@@ -9,6 +9,7 @@ import { toast } from "react-hot-toast"
 
 import Modal from "@/app/components/Modal"
 import Button from "@/app/components/Button"
+import { IconTrash } from "@/app/components/Icons"
 
 interface ConfirmModalProps {
   isOpen?: boolean
@@ -39,10 +40,10 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({ isOpen,onClose }) => {
       isOpen={isOpen}
       onClose={onClose}
     >
-      <section className='flex flex-col items-center justify-center gap-4'>
-        <h5 className='text-2xl font-semibold'>Delete conversation</h5>
-        <p className='text-sm text-gray-500'>Are you sure you want to delete this conversation? This action cannot be undone.</p>
-        <footer className='w-full flex items-center justify-center gap-4'>
+      <section className='py-12 px-6 max-w-[320px] flex flex-col items-center justify-center gap-2 lg:p-16 lg:max-w-[560px] lg:gap-4'>
+        <h5 className='text-white text-2xl text-center font-semibold lg:text-5xl'>Delete conversation</h5>
+        <p className='text-center text-xs text-neutral-300 lg:text-xl'>Are you sure you want to delete this conversation? This action cannot be undone.</p>
+        <footer className='mt-2 w-full text-white flex items-center justify-center gap-2 lg:mt-4 lg:gap-6'>
           <Button
             disabled={isLoading}
             secondary
@@ -56,6 +57,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({ isOpen,onClose }) => {
             onClick={onDelete}
           >
             Delete
+            <IconTrash />
           </Button>
         </footer>
       </section>

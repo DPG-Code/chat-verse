@@ -10,6 +10,7 @@ import { toast } from "react-hot-toast"
 import Button from "@/app/components/Button"
 import Input from "@/app/components/inputs/Input"
 import AuthSocialButton from "./AuthSocialButton"
+import { IconArrowRight } from "@/app/components/Icons"
 
 type Variant = 'LOGIN' | 'REGISTER'
 
@@ -79,12 +80,12 @@ const AuthForm = () => {
   }
 
   return (
-    <div className='flex flex-col items-center justify-center gap-4'>
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-center justify-center gap-4">
+    <div className='flex flex-col items-center justify-center gap-5'>
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-center justify-center gap-6">
         {variant === 'REGISTER' && (
           <Input
             id='name'
-            label='Name'
+            placeholder='Name'
             register={register}
             errors={errors}
             disabled={isLoading}
@@ -92,7 +93,7 @@ const AuthForm = () => {
         )}
         <Input
           id='email'
-          label='Email'
+          placeholder='Email'
           type='email'
           register={register}
           errors={errors}
@@ -100,7 +101,7 @@ const AuthForm = () => {
         />
         <Input
           id='password'
-          label='Password'
+          placeholder='Password'
           type='password'
           register={register}
           errors={errors}
@@ -108,14 +109,14 @@ const AuthForm = () => {
         />
         <Button
           disabled={isLoading}
-          fullWidth
           type='submit'
         >
           {variant === 'LOGIN' ? 'Sign In' : 'Register'}
+          <IconArrowRight />
         </Button>
       </form>
-      <span className='text-xs text-center text-gray-500'>Or continue with</span>
-      <div className='w-full flex items-center justify-center gap-2'>
+      <span className='text-base text-center text-neutral-500 font-semibold lg:text-lg'>Or continue with</span>
+      <div className='w-full flex items-center justify-center gap-2 lg:gap-6'>
         <AuthSocialButton
           icon='google'
           onClick={() => soacialAction('google')}
@@ -125,15 +126,12 @@ const AuthForm = () => {
           onClick={() => soacialAction('github')}
         />
       </div>
-      <div className='w-full flex items-center justify-center gap-2'>
-        <p className='text-center text-gray-500'>{variant === 'LOGIN' ? 'New to ChatVerse?' : 'Already have an account?'}</p>
-        <button
-          onClick={toggleVariant}
-          className='py-1 px-4 flex items-center justify-center'
-        >
-          {variant === 'LOGIN' ? 'Create an account' : 'Login'}
+      <footer className='w-full text-base flex items-center justify-center gap-3 lg:text-xl'>
+        <p className='text-center text-neutral-400 font-medium'>{variant === 'LOGIN' ? 'New to ChatVerse?' : 'Already have an account?'}</p>
+        <button onClick={toggleVariant}>
+          <p className='text-white font-bold underline underline-offset-4'>{variant === 'LOGIN' ? 'Create an account' : 'Login'}</p>
         </button>
-      </div>
+      </footer>
     </div>
   )
 }

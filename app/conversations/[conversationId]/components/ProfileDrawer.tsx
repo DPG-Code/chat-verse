@@ -54,18 +54,21 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({ data,isOpen,onClose }) =>
         isOpen={confirmOpen}
         onClose={() => setConfirmOpen(false)}
       />
-      <section className={`${isOpen ? 'block' : 'hidden'} w-full h-full backdrop-blur flex justify-end absolute z-40 lg:-ml-32`}>
-        <div className='px-6 h-full bg-white shadow-2xl flex flex-col items-center justify-center overflow-y-scroll gap-6'>
-          <header className='flex flex-col items-center justify-center gap-1'>
+      <section className={`${isOpen ? 'block' : 'hidden'} w-full h-full backdrop-blur flex justify-end absolute z-30 lg:-ml-32`}>
+        <div className='px-12 h-full bg-neutral-950 shadow-2xl flex flex-col items-center justify-center overflow-y-scroll gap-8 lg:px-16'>
+          <header className='flex flex-col items-center justify-center gap-4 lg:gap-6'>
             {data.isGroup ? (
               <AvatarGroup users={data.users} />
             ) : (
               <Avatar user={otherUser} />
             )
             }
-            <h3 className='text-2xl font-semibold'>{title}</h3>
-            <p className='text-sm font-medium text-gray-500'>{statusText}</p>
-            <button className='mt-2 flex gap-2' onClick={() => setConfirmOpen(true)}>
+            <h3 className='text-white text-2xl font-semibold lg:text-4xl'>{title}</h3>
+            <p className='-mt-4 text-base font-medium text-neutral-400 lg:text-lg lg:-mt-6'>{statusText}</p>
+            <button
+              className='py-2.5 px-12 bg-neutral-800 text-white font-bold flex items-center justify-center gap-2 rounded-xl'
+              onClick={() => setConfirmOpen(true)}
+            >
               <span>Delete</span>
               <IconTrash />
             </button>
@@ -73,26 +76,27 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({ data,isOpen,onClose }) =>
           {/* Information members group */}
           {data.isGroup && (
             <article className='w-full flex flex-col gap-1'>
-              <h5 className='text-sm font-semibold sm:flex-shrink-0'>Emails</h5>
-              <p className='text-sm'>
-                {data.users.map((user) => user.email).join(', ')}
-              </p>
+              <h5 className='text-white text-base font-semibold sm:flex-shrink-0 lg:text-lg'>Emails</h5>
+              <div className='w-full flex flex-col'>
+                {data.users.map((user,i) => <p key={i} className='text-neutral-500 text-sm font-semibold lg:text-base'>{user.email}</p>)}
+              </div>
             </article>
           )}
           {/* Information no group */}
           {!data.isGroup && (
             <article className='w-full flex flex-col gap-1'>
-              <h5 className='text-sm font-semibold sm:flex-shrink-0'>Email</h5>
-              <p className='text-sm'>{otherUser.email}</p>
+              <h5 className='text-white text-base font-semibold sm:flex-shrink-0 lg:text-lg'>Email</h5>
+              <p className='text-neutral-500 text-sm font-semibold lg:text-base'>{otherUser.email}</p>
             </article>
           )}
           {!data.isGroup && (
             <article className='w-full flex flex-col gap-1'>
-              <h5 className='text-sm font-semibold sm:flex-shrink-0'>Joined</h5>
-              <time className='text-sm' dateTime={joinedData}>{joinedData}</time>
+              <h5 className='text-white text-base font-semibold sm:flex-shrink-0 lg:text-lg'>Joined</h5>
+              <time className='text-neutral-500 text-sm font-semibold lg:text-base' dateTime={joinedData}>{joinedData}</time>
             </article>
           )}
           <button
+            className='text-white'
             type='button'
             onClick={onClose}
           >

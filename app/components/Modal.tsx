@@ -13,12 +13,12 @@ interface ModalProps {
 const Modal: React.FC<ModalProps> = ({ isOpen,onClose,children }) => {
   return (
     <div
-      className={`${isOpen ? 'block' : 'hidden'} w-full h-full backdrop-blur grid place-content-center fixed top-0 right-0 z-50`}
+      className={`${isOpen ? 'block' : 'hidden'} w-full h-full backdrop-blur grid place-content-center fixed top-0 right-0 z-40`}
     >
-      <div className='p-12 bg-white rounded-2xl shadow-2xl relative sm:max-w-lg'>
+      <div className='bg-neutral-950 rounded-2xl shadow-2xl relative'>
         <button
           type='button'
-          className='absolute top-6 right-6'
+          className='text-white absolute top-6 right-6 z-50'
           onClick={onClose}
         >
           <IconClose />

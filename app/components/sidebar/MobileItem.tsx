@@ -23,8 +23,8 @@ const MobileItem: React.FC<MobileItemProps> = ({ label,href,icon,active,onClick 
       <Link
         href={href}
         className={clsx(
-          'text-gray-500 hover:text-black',
-          active && 'text-black'
+          'text-neutral-400 hover:text-white',
+          active && 'text-white'
         )}
       >
         <IconsNavbar icon={icon as IconNavbarType} />

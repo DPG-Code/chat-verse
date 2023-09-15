@@ -63,7 +63,7 @@ const Body: React.FC<BodyProps> = ({ initialMessages }) => {
   },[conversationId])
 
   return (
-    <section className='px-6 flex-1 overflow-y-auto'>
+    <section className='px-6 flex-1 overflow-y-auto lg:px-12'>
       {
         messages.map((message,i) => (
           <MessageBox

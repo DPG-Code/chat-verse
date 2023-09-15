@@ -35,7 +35,7 @@ const Form = () => {
   }
 
   return (
-    <footer className='mt-auto p-6 w-full flex gap-6'>
+    <footer className='mt-auto py-4 px-6 w-full text-white flex gap-6 lg:p-12 lg:gap-12'>
       <CldUploadButton
         options={{ maxFiles: 1 }}
         onUpload={handleUpload}
@@ -43,7 +43,7 @@ const Form = () => {
       >
         <IconPhoto />
       </CldUploadButton>
-      <form className='w-full flex gap-4' onSubmit={handleSubmit(onSubmit)}>
+      <form className='w-full flex gap-6 lg:gap-12' onSubmit={handleSubmit(onSubmit)}>
         <MessageInput
           id='message'
           register={register}
@@ -51,7 +51,7 @@ const Form = () => {
           required
           placeholder='Write a message'
         />
-        <button type='submit'>
+        <button className='text-white' type='submit'>
           <IconSend />
         </button>
       </form>

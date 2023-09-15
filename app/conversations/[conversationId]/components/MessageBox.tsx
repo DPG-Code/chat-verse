@@ -43,8 +43,8 @@ const MessageBox: React.FC<MessageBoxPops> = ({ data,isLast }) => {
 
   const message = clsx(
     'text-lg w-fit overflow-hidden',
-    isOwn ? 'bg-sky-500 text-white' : 'bg-gray-200',
-    data.image ? 'rounded-lg p-0' : 'rounded-full p-2 px-4'
+    isOwn ? 'bg-neutral-500 text-white' : 'bg-neutral-800 text-white',
+    data.image ? 'rounded-xl p-0' : 'rounded-full p-2 px-4'
   )
 
   return (
@@ -53,9 +53,9 @@ const MessageBox: React.FC<MessageBoxPops> = ({ data,isLast }) => {
         <Avatar user={data.sender} />
       </aside>
       <section className={body}>
-        <header className='flex items-center justify-start gap-4'>
-          <p className='text-lg font-semibold'>{data.sender.name}</p>
-          <span className='text-xs text-gray-500'>{format(new Date(data.createdAt),'p')}</span>
+        <header className='flex items-center justify-start gap-6'>
+          <p className={`${isOwn && 'order-2'} text-white text-lg font-semibold lg:text-xl`}>{data.sender.name}</p>
+          <p className='text-xs text-neutral-400 font-medium lg:text-sm'>{format(new Date(data.createdAt),'p')}</p>
         </header>
         <div className={message}>
           <ImageModal
@@ -80,7 +80,7 @@ const MessageBox: React.FC<MessageBoxPops> = ({ data,isLast }) => {
         </div>
         {
           isLast && isOwn && seenList.length > 0 && (
-            <p className='mt-2 text-xs text-gray-500'>Seen by: {seenList}</p>
+            <p className='mt-2 text-xs text-neutral-400 lg:text-sm'>Seen by: <span className='font-semibold'>{seenList}</span></p>
           )
         }
       </section>

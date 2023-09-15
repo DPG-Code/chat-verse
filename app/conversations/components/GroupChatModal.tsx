@@ -63,19 +63,22 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({ users,isOpen,onClose })
       isOpen={isOpen}
       onClose={onClose}
     >
-      <form className='text-center flex flex-col items-center justify-center gap-6' onSubmit={handleSubmit(onSubmit)}>
-        <h2 className='text-3xl font-bold'>Create a chat group</h2>
-        <p className='text-lg text-gray-500 font-medium'>Create a chat with more than 2 people</p>
+      <form
+        className='py-12 px-6 max-w-[320px] text-center flex flex-col items-center justify-center gap-6 lg:p-16 lg:max-w-[560px] lg:gap-8'
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <h2 className='text-center text-white text-3xl font-bold lg:text-5xl'>Create a chat group</h2>
+        <p className='text-center text-base text-neutral-400 font-medium lg:text-xl'>Create a chat with more than 2 people</p>
         <Input
           register={register}
-          label='Name'
+          placeholder='Group name'
           id='name'
           disabled={isLoading}
           required
           errors={errors}
         />
         <Select
-          label='members'
+          label='Members'
           disabled={isLoading}
           options={users.map((user) => ({
             value: user.id,
@@ -86,7 +89,7 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({ users,isOpen,onClose })
           })}
           value={members}
         />
-        <footer className='flex items-center justify-center gap-2'>
+        <footer className='flex items-center justify-center gap-2 lg:gap-6'>
           <Button
             type='button'
             disabled={isLoading}

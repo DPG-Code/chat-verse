@@ -1,7 +1,10 @@
+import { IconNewChat } from "./Icons"
+
 const EmptyState = () => {
   return (
-    <div className='w-full h-full flex flex-col items-center justify-center'>
-      Select a chat or start a new conversation
+    <div className='px-24 w-full h-full text-neutral-400 flex flex-col items-center justify-center gap-4'>
+      <h3 className='text-center text-xl lg:text-2xl 2xl:text-3xl'>Select a chat or start a new conversation</h3>
+      <IconNewChat />
     </div>
   )
 }
