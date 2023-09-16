@@ -30,7 +30,7 @@ const UserBox: React.FC<UserBoxProps> = ({ data }) => {
         <p>loading...</p>
       )}
       <div
-        className='p-4 w-full min-w-[220px] cursor-pointer flex items-center justify-start rounded-xl hover:bg-neutral-800 gap-6 lg:w-96'
+        className='p-4 w-full min-w-[220px] cursor-pointer border-2 border-neutral-900 flex items-center justify-start rounded-xl hover:bg-neutral-900 gap-6 lg:w-96'
         onClick={handleClick}
       >
         <Avatar user={data} />

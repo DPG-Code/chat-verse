@@ -87,8 +87,8 @@ const ConversationList: React.FC<ConversationListProps> = ({ initialItems,users 
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
-      <section className={clsx(
-        'p-12 w-full flex flex-col gap-10',
+      <section id='conversation-container' className={clsx(
+        'px-6 pt-12 w-full flex flex-col overflow-hidden lg:px-12 gap-10',
         isOpen ? 'hidden' : 'block'
       )}>
         <header className='flex items-center justify-between'>
@@ -97,7 +97,7 @@ const ConversationList: React.FC<ConversationListProps> = ({ initialItems,users 
             <IconGroup />
           </button>
         </header>
-        <div className='h-full w-full flex flex-col overflow-y-scroll'>
+        <div className='h-full w-full flex flex-col overflow-y-scroll z-20'>
           {
             items.map((item) => (
               <ConversationBox

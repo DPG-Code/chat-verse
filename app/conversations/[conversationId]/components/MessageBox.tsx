@@ -42,9 +42,11 @@ const MessageBox: React.FC<MessageBoxPops> = ({ data,isLast }) => {
   )
 
   const message = clsx(
-    'text-lg w-fit overflow-hidden',
-    isOwn ? 'bg-neutral-500 text-white' : 'bg-neutral-800 text-white',
-    data.image ? 'rounded-xl p-0' : 'rounded-full p-2 px-4'
+    'text-lg font-light w-fit overflow-hidden lg:texl-xl',
+    isOwn ? 'bg-fuchsia-800/25 text-white' : 'bg-neutral-900 text-white',
+    (!data.image && isOwn) && 'rounded-l-2xl rounded-b-2xl p-2 px-4',
+    (!data.image && !isOwn) && 'rounded-r-2xl rounded-b-2xl p-2 px-4',
+    data.image && 'w-52 h-52 p-0 lg:w-96 lg:h-96'
   )
 
   return (
@@ -68,9 +70,9 @@ const MessageBox: React.FC<MessageBoxPops> = ({ data,isLast }) => {
               <Image
                 onClick={() => setImageModalOpen(true)}
                 src={data.image}
-                width='288'
-                height='288'
-                className='object-cover cursor-pointer'
+                width='208'
+                height='208'
+                className='w-52 h-52 rounded-xl object-cover cursor-pointer lg:w-96 lg:h-96'
                 alt='image'
               />
             ) : (
