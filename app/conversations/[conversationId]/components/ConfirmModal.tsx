@@ -40,9 +40,9 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({ isOpen,onClose }) => {
       isOpen={isOpen}
       onClose={onClose}
     >
-      <section className='py-12 px-6 max-w-[320px] flex flex-col items-center justify-center gap-2 lg:p-16 lg:max-w-[560px] lg:gap-4'>
+      <section className='py-12 px-6 max-w-[320px] flex flex-col items-center justify-center gap-3 z-20 relative lg:p-16 lg:max-w-[560px] lg:gap-4'>
         <h5 className='text-white text-2xl text-center font-semibold lg:text-5xl'>Delete conversation</h5>
-        <p className='text-center text-xs text-neutral-300 lg:text-xl'>Are you sure you want to delete this conversation? This action cannot be undone.</p>
+        <p className='text-center text-xs text-neutral-400 lg:text-xl'>Are you sure you want to delete this conversation? This action cannot be undone.</p>
         <footer className='mt-2 w-full text-white flex items-center justify-center gap-2 lg:mt-4 lg:gap-6'>
           <Button
             disabled={isLoading}

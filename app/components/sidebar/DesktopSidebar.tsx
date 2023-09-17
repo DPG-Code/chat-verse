@@ -23,7 +23,7 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
         onClose={() => setIsOpen(false)}
         currentUser={currentUser}
       />
-      <aside className='py-12 w-32 h-full bg-neutral-950 hidden absolute left-0 z-20 lg:flex lg:flex-col lg:justify-between lg:items-center'>
+      <aside className='py-12 w-32 h-full bg-neutral-950 hidden absolute left-0 z-30 lg:flex lg:flex-col lg:justify-between lg:items-center'>
         <nav>
           <ul className='flex flex-col items-center gap-16'>
             {

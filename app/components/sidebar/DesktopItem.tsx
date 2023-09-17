@@ -23,7 +23,7 @@ const DesktopItem: React.FC<DesktopItemProps> = ({ label,href,icon,active,onClic
       <Link
         href={href}
         className={clsx(
-          'text-neutral-500 hover:text-white',
+          'text-neutral-500 hover:text-white transition',
           active && 'text-white'
         )}
       >

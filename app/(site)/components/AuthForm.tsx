@@ -129,7 +129,7 @@ const AuthForm = () => {
       <footer className='w-full text-base flex items-center justify-center gap-3 lg:text-xl'>
         <p className='text-center text-neutral-500 font-medium'>{variant === 'LOGIN' ? 'New to ChatVerse?' : 'Already have an account?'}</p>
         <button onClick={toggleVariant}>
-          <p className='text-white font-semibold underline underline-offset-4'>{variant === 'LOGIN' ? 'Create an account' : 'Login'}</p>
+          <p className='text-neutral-300 font-semibold underline underline-offset-4 hover:text-white transition'>{variant === 'LOGIN' ? 'Create an account' : 'Login'}</p>
         </button>
       </footer>
     </div>

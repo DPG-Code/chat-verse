@@ -91,9 +91,9 @@ const ConversationList: React.FC<ConversationListProps> = ({ initialItems,users 
         'px-6 pt-12 w-full flex flex-col overflow-hidden lg:px-12 gap-10',
         isOpen ? 'hidden' : 'block'
       )}>
-        <header className='flex items-center justify-between'>
+        <header className='flex items-center justify-between z-20'>
           <h3 className='text-white text-2xl font-bold lg:text-4xl'>Messages</h3>
-          <button className='text-white' onClick={() => setIsModalOpen(true)}>
+          <button className='text-neutral-500 hover:text-white transition' onClick={() => setIsModalOpen(true)}>
             <IconGroup />
           </button>
         </header>

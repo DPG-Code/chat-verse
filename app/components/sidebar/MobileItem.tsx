@@ -23,7 +23,7 @@ const MobileItem: React.FC<MobileItemProps> = ({ label,href,icon,active,onClick 
       <Link
         href={href}
         className={clsx(
-          'text-neutral-400 hover:text-white',
+          'text-neutral-400 hover:text-white transition',
           active && 'text-white'
         )}
       >

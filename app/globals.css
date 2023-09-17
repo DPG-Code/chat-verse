@@ -44,12 +44,13 @@ body{
   width: 720px;
   height: 720px;
   background: linear-gradient(125deg,rgb(59, 7, 100) 5%,rgb(59, 7, 100, 15%) 25%,rgb(59, 7, 100, 0%) 100%);
-  filter: blur(75px);
+  filter: blur(50px);
   border-radius: 100%;
   position: absolute;
   left: 50%;
   bottom: -15%;
   overflow: hidden;
+  z-index: 10;
 }
 
 #user-list::before, #conversation-container::after {
@@ -57,9 +58,23 @@ body{
   width: 240px;
   height: 240px;
   background: linear-gradient(125deg,rgb(162, 28, 175) 5%,rgb(162, 28, 175, 15%) 25%,rgb(162, 28, 175, 0%) 100%);
-  filter: blur(75px);
+  filter: blur(35px);
   border-radius: 100%;
   position: absolute;
   top: 0;
   overflow: hidden;
+  z-index: 0;
+}
+
+#modal::before {
+  content: "";
+  width: 160px;
+  height: 160px;
+  background: linear-gradient(125deg,rgb(126, 34, 206) 5%,rgb(126, 34, 206, 15%) 25%,rgb(126, 34, 206, 0%) 100%);
+  filter: blur(35px);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: 0;
 }

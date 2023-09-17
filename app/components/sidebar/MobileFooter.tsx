@@ -27,7 +27,7 @@ const MobileFooter: React.FC<MobileFooterProps> = ({ currentUser }) => {
         onClose={() => setIsModalOpen(false)}
         currentUser={currentUser}
       />
-      <footer className='w-full h-24 bg-neutral-950 flex items-center justify-center gap-8 absolute bottom-0 z-20 lg:hidden'>
+      <footer className='w-full h-24 bg-neutral-950 flex items-center justify-center gap-8 absolute bottom-0 z-30 lg:hidden'>
         <nav>
           <ul className='flex items-center justify-center gap-12'>
             {
