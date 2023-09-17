@@ -12,7 +12,7 @@ import { User } from "@prisma/client"
 import Modal from "../Modal"
 import Input from "../inputs/Input"
 import Button from "../Button"
-import { IconEdit } from "../Icons"
+import { IconEdit,IconSave } from "../Icons"
 
 interface SettingsModalProps {
   isOpen?: boolean
@@ -113,6 +113,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen,onClose,currentUse
             type='submit'
           >
             Save
+            <IconSave />
           </Button>
         </footer>
       </form>

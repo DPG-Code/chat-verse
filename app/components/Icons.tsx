@@ -107,7 +107,7 @@ export const IconTrash = () => {
 
 export const IconGoogle = () => {
   return (
-    <svg className="w-4 h-4" width={24} height={24} viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <svg className="w-5 h-5" width={24} height={24} viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
       <path d="M17.788 5.108a9 9 0 1 0 3.212 6.892h-8"></path>
     </svg>
@@ -116,7 +116,7 @@ export const IconGoogle = () => {
 
 export const IconGithub = () => {
   return (
-    <svg className="w-4 h-4" width={24} height={24} viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <svg className="w-5 h-5" width={24} height={24} viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
       <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
     </svg>
@@ -125,11 +125,39 @@ export const IconGithub = () => {
 
 export const IconArrowRight = () => {
   return (
-    <svg className="w-4 h-4" width={24} height={24} viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <svg className="w-5 h-5" width={24} height={24} viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
       <path d="M5 12l14 0"></path>
       <path d="M15 16l4 -4"></path>
       <path d="M15 8l4 4"></path>
+    </svg>
+  )
+}
+
+export const IconLoader = () => {
+  return (
+    <svg className="w-6 h-6 animate-spin" width={24} height={24} viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M12 3a9 9 0 1 0 9 9"></path>
+    </svg>
+  )
+}
+
+export const IconSave = () => {
+  return (
+    <svg className="w-5 h-5" width={24} height={24} viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M5 12l5 5l10 -10"></path>
+    </svg>
+  )
+}
+
+export const IconPlus = () => {
+  return (
+    <svg className="w-5 h-5" width={24} height={24} viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M12 5l0 14"></path>
+      <path d="M5 12l14 0"></path>
     </svg>
   )
 }

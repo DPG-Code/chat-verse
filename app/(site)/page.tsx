@@ -1,10 +1,10 @@
 import Image from "next/image"
 import AuthForm from "./components/AuthForm"
-import './stars.css'
+import '../stars.css'
 
 export default function Home() {
   return (
-    <main id='principal-page' className='px-12 min-h-full w-full flex items-center justify-center overflow-hidden relative'>
+    <main id='principal-page' className='p-12 min-h-full w-full flex items-center justify-center overflow-hidden relative'>
       <section className='flex flex-col items-center justify-center gap-16 z-10 lg:gap-12 2xl:gap-16'>
         <Image
           className='w-96 h-auto invert lg:w-[640px]'
@@ -20,7 +20,7 @@ export default function Home() {
           <AuthForm />
         </div>
       </section>
-      <div id="stars"></div>
+      <div id='stars'></div>
     </main>
   )
 }

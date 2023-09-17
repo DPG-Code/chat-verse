@@ -6,6 +6,7 @@ import axios from "axios"
 import { User } from "@prisma/client"
 
 import Avatar from "@/app/components/Avatar"
+import { IconLoader } from "@/app/components/Icons"
 
 interface UserBoxProps {
   data: User
@@ -26,13 +27,17 @@ const UserBox: React.FC<UserBoxProps> = ({ data }) => {
 
   return (
     <>
-      {isLoading && (
-        <p>loading...</p>
-      )}
       <div
-        className='p-4 w-full min-w-[220px] cursor-pointer border-2 border-neutral-900 flex items-center justify-start rounded-xl hover:bg-neutral-900 gap-6 transition lg:w-96'
+        className='p-4 w-full min-w-[220px] cursor-pointer border-2 border-neutral-900 flex items-center justify-start rounded-xl hover:bg-neutral-900 gap-6 transition relative lg:w-96'
         onClick={handleClick}
       >
+        {isLoading && (
+          <div
+            className='text-fuchsia-700 absolute right-4 z-30'
+          >
+            <IconLoader />
+          </div>
+        )}
         <Avatar user={data} />
         <p className='text-xl text-white font-medium truncate lg:text-2xl'>{data.name}</p>
       </div>

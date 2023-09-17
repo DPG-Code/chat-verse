@@ -11,6 +11,7 @@ import Modal from "@/app/components/Modal"
 import Input from "@/app/components/inputs/Input"
 import Select from "@/app/components/inputs/Select"
 import Button from "@/app/components/Button"
+import { IconPlus } from "@/app/components/Icons"
 
 interface GroupChatModalProps {
   users: User[]
@@ -103,6 +104,7 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({ users,isOpen,onClose })
             disabled={isLoading}
           >
             Create
+            <IconPlus />
           </Button>
         </footer>
       </form>
