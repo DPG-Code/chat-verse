@@ -64,7 +64,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({ data,isOpen,onClose }) =>
             )
             }
             <h3 className='text-white text-2xl font-semibold lg:text-4xl'>{title}</h3>
-            <p className='-mt-4 text-base font-medium text-neutral-400 lg:text-lg lg:-mt-6'>{statusText}</p>
+            <p className='-mt-4 text-base font-medium text-neutral-300 lg:text-lg'>{statusText}</p>
             <button
               className='py-2.5 px-12 bg-neutral-900 text-white font-bold flex items-center justify-center gap-2 rounded-xl hover:bg-neutral-800 transition'
               onClick={() => setConfirmOpen(true)}
@@ -78,7 +78,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({ data,isOpen,onClose }) =>
             <article className='w-full flex flex-col gap-1'>
               <h5 className='text-white text-base font-semibold sm:flex-shrink-0 lg:text-lg'>Emails</h5>
               <div className='w-full flex flex-col'>
-                {data.users.map((user,i) => <p key={i} className='text-neutral-500 text-sm font-semibold lg:text-base'>{user.email}</p>)}
+                {data.users.map((user,i) => <p key={i} className='text-neutral-500 text-sm font-semibold truncate lg:text-base'>{user.email}</p>)}
               </div>
             </article>
           )}

@@ -4,6 +4,8 @@ import { useState } from "react"
 import { User } from "@prisma/client"
 import useRoutes from "@/app/hooks/useRoutes"
 import useConversation from "@/app/hooks/useConversation"
+import useDontSeenMessages from "@/app/hooks/useDontSeenMessages"
+import { FullConversationType } from "@/app/types"
 
 import MobileItem from "./MobileItem"
 import Avatar from "../Avatar"
@@ -11,12 +13,14 @@ import SettingsModal from "./SettingsModal"
 
 interface MobileFooterProps {
   currentUser: User
+  conversations: FullConversationType[]
 }
 
-const MobileFooter: React.FC<MobileFooterProps> = ({ currentUser }) => {
+const MobileFooter: React.FC<MobileFooterProps> = ({ currentUser,conversations }) => {
   const routes = useRoutes()
   const [isModalOpen,setIsModalOpen] = useState(false)
   const { isOpen } = useConversation()
+  const messageNotSeen = useDontSeenMessages(conversations)
 
   if (isOpen) return null
 
@@ -39,6 +43,7 @@ const MobileFooter: React.FC<MobileFooterProps> = ({ currentUser }) => {
                   icon={route.icon}
                   active={route.active}
                   onClick={route.onClick}
+                  notification={messageNotSeen}
                 />
               ))
             }

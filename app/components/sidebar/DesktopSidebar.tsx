@@ -3,6 +3,8 @@
 import { useState } from "react"
 import { User } from "@prisma/client"
 import useRoutes from "@/app/hooks/useRoutes"
+import useDontSeenMessages from "@/app/hooks/useDontSeenMessages"
+import { FullConversationType } from "@/app/types"
 
 import DesktopItem from "./DesktopItem"
 import Avatar from "../Avatar"
@@ -10,11 +12,13 @@ import SettingsModal from "./SettingsModal"
 
 interface DesktopSidebarProps {
   currentUser: User
+  conversations: FullConversationType[]
 }
 
-const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
+const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser,conversations }) => {
   const routes = useRoutes()
   const [isOpen,setIsOpen] = useState(false)
+  const messageNotSeen = useDontSeenMessages(conversations)
 
   return (
     <>
@@ -35,6 +39,7 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
                   icon={route.icon}
                   active={route.active}
                   onClick={route.onClick}
+                  notification={messageNotSeen}
                 />
               ))
             }

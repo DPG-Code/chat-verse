@@ -68,13 +68,12 @@ body{
 
 #modal::before {
   content: "";
+  margin: auto;
   width: 160px;
   height: 160px;
   background: linear-gradient(125deg,rgb(126, 34, 206) 5%,rgb(126, 34, 206, 15%) 25%,rgb(126, 34, 206, 0%) 100%);
   filter: blur(35px);
   position: absolute;
-  bottom: 0;
-  right: 0;
   overflow: hidden;
   z-index: 0;
 }
