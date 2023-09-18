@@ -48,6 +48,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({ isOpen,onClose }) => {
             disabled={isLoading}
             secondary
             onClick={onClose}
+            type='button'
           >
             Cancel
           </Button>
@@ -55,6 +56,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({ isOpen,onClose }) => {
             disabled={isLoading}
             danger
             onClick={onDelete}
+            type='submit'
           >
             Delete
             <IconTrash />

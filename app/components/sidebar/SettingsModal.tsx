@@ -67,7 +67,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen,onClose,currentUse
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <form className='py-12 px-6 max-w-[320px] text-center flex flex-col items-center justify-center gap-6 z-20 relative lg:p-16 lg:max-w-[560px] lg:gap-8' onSubmit={handleSubmit(onSubmit)}>
-        <header className='text-center flex flex-col items-center justify-center gap-2'>
+        <header className='text-center flex flex-col items-center justify-center gap-2 lg:gap-3'>
           <h2 className='text-center text-white text-3xl font-bold lg:text-5xl'>Profile</h2>
           <p className='text-center text-lg text-neutral-400 font-medium lg:text-xl'>Edit your public information</p>
           <Input
@@ -105,6 +105,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen,onClose,currentUse
             disabled={isLoading}
             secondary
             onClick={onClose}
+            type='button'
           >
             Cancel
           </Button>
