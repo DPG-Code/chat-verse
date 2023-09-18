@@ -9,11 +9,11 @@ import useConversation from "@/app/hooks/useConversation"
 import { FullConversationType } from "@/app/types"
 import { pusherClient } from "@/app/libs/pusher"
 import { find } from "lodash"
+import useDontSeenMessages from "@/app/hooks/useDontSeenMessages"
 
 import ConversationBox from "./ConversationBox"
 import GroupChatModal from "./GroupChatModal"
 import { IconGroup } from "@/app/components/Icons"
-import useDontSeenMessages from "@/app/hooks/useDontSeenMessages"
 
 interface ConversationListProps {
   initialItems: FullConversationType[]
@@ -24,10 +24,10 @@ const ConversationList: React.FC<ConversationListProps> = ({ initialItems,users 
   const session = useSession()
   const [items,setItems] = useState(initialItems)
   const [isModalOpen,setIsModalOpen] = useState(false)
+  const messagesNotSeen = useDontSeenMessages(initialItems)
 
   const router = useRouter()
   const { conversationId,isOpen } = useConversation()
-  const messageNotSeen = useDontSeenMessages(items)
 
   // Generate Pusher key from user's email
   const pusherKey = useMemo(() => {
@@ -97,8 +97,8 @@ const ConversationList: React.FC<ConversationListProps> = ({ initialItems,users 
         <header className='flex items-center justify-between z-20'>
           <h3 className='text-white text-2xl font-bold flex gap-4 lg:text-4xl'>
             Messages
-            <span className={`${messageNotSeen.length > 0 ? 'text-fuchsia-800' : 'text-neutral-500'}`}>
-              {messageNotSeen.length > 0 ? `(${messageNotSeen.length})` : '(0)'}
+            <span className={`${messagesNotSeen.length > 0 ? 'text-fuchsia-700' : 'text-neutral-500'}`}>
+              {messagesNotSeen.length > 0 ? `(${messagesNotSeen.length})` : '(0)'}
             </span>
           </h3>
           <button className='text-neutral-500 hover:text-white transition' onClick={() => setIsModalOpen(true)}>

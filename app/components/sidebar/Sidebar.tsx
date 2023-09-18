@@ -16,11 +16,11 @@ export default async function Sidebar({
     <div className='h-full w-full flex flex-col items-start relative lg:flex-row'>
       <DesktopSidebar
         currentUser={currentUser!}
-        conversations={conversations!}
+        conversations={conversations}
       />
       <MobileFooter
         currentUser={currentUser!}
-        conversations={conversations!}
+        conversations={conversations}
       />
       {children}
     </div>

@@ -20,7 +20,7 @@ const MobileFooter: React.FC<MobileFooterProps> = ({ currentUser,conversations }
   const routes = useRoutes()
   const [isModalOpen,setIsModalOpen] = useState(false)
   const { isOpen } = useConversation()
-  const messageNotSeen = useDontSeenMessages(conversations)
+  const messagesNotSeen = useDontSeenMessages(conversations)
 
   if (isOpen) return null
 
@@ -43,7 +43,7 @@ const MobileFooter: React.FC<MobileFooterProps> = ({ currentUser,conversations }
                   icon={route.icon}
                   active={route.active}
                   onClick={route.onClick}
-                  notification={messageNotSeen}
+                  messagesNotSeen={messagesNotSeen}
                 />
               ))
             }

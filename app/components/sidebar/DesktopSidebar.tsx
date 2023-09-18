@@ -18,7 +18,8 @@ interface DesktopSidebarProps {
 const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser,conversations }) => {
   const routes = useRoutes()
   const [isOpen,setIsOpen] = useState(false)
-  const messageNotSeen = useDontSeenMessages(conversations)
+
+  const messagesNotSeen = useDontSeenMessages(conversations)
 
   return (
     <>
@@ -39,7 +40,7 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser,conversatio
                   icon={route.icon}
                   active={route.active}
                   onClick={route.onClick}
-                  notification={messageNotSeen}
+                  messagesNotSeen={messagesNotSeen}
                 />
               ))
             }
