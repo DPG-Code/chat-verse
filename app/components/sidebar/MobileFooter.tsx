@@ -49,7 +49,7 @@ const MobileFooter: React.FC<MobileFooterProps> = ({ currentUser,conversations }
             }
           </ul>
         </nav>
-        <div className='cursor-pointer' onClick={() => setIsModalOpen(true)}>
+        <div data-test-id='settings-profile' className='cursor-pointer' onClick={() => setIsModalOpen(true)}>
           <Avatar user={currentUser} />
         </div>
       </footer>

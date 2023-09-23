@@ -11,21 +11,14 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen,onClose,children }) => {
-  const variantsContainer = {
-    open: { display: 'grid' },
-    closed: { display: 'none' },
-  }
-
   const variantsModal = {
     open: { scale: 1 },
     closed: { scale: 0 },
   }
 
   return (
-    <motion.div
-      className={`${isOpen ? 'grid' : 'hidden'} w-full h-full min-h-[560px] backdrop-blur grid place-content-center fixed top-0 right-0 z-40 lg:min-h-[620px]`}
-      animate={isOpen ? "open" : "closed"}
-      variants={variantsContainer}
+    <div
+      className={`${isOpen ? 'flex' : 'hidden'} w-full h-full min-h-[560px] backdrop-blur items-center justify-center fixed top-0 right-0 z-40 lg:min-h-[620px]`}
     >
       <motion.div
         id='modal'
@@ -42,7 +35,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen,onClose,children }) => {
         </button>
         {children}
       </motion.div>
-    </motion.div>
+    </div>
   )
 }
 export default Modal

@@ -28,8 +28,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({ isOpen,onClose }) => {
     axios.delete(`/api/conversations/${conversationId}`)
       .then(() => {
         onClose()
-        router.push('/conversations') // Redirect to conversations list
-        router.refresh()// Refresh the router to update the UI
+        router.push('/users') // Redirect to conversations list
       })
       .catch(() => toast.error('Something went wrong!'))
       .finally(() => setIsLoading(false))
@@ -53,6 +52,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({ isOpen,onClose }) => {
             Cancel
           </Button>
           <Button
+            test='test-button-delete'
             disabled={isLoading}
             danger
             onClick={onDelete}

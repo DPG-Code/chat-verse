@@ -84,6 +84,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({ data,isOpen,onClose }) =>
             <h3 className='text-white text-2xl font-semibold lg:text-4xl'>{title}</h3>
             <p className='-mt-4 text-base font-medium text-neutral-300 lg:text-lg'>{statusText}</p>
             <button
+              data-test-id='open-modal-delete-conversation'
               className='py-2.5 px-12 bg-neutral-900 text-white font-bold flex items-center justify-center gap-2 rounded-xl hover:bg-neutral-800 transition'
               onClick={() => setConfirmOpen(true)}
             >

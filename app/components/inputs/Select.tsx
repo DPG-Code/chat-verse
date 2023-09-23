@@ -16,6 +16,7 @@ const Select: React.FC<SelectProps> = ({ label,disabled,options,onChange,value }
     <div className='flex flex-col items-center justify-center gap-2 z-50 relative lg:gap-3'>
       <label className='text-lg text-white font-semibold lg:text-2xl'>{label}</label>
       <ReactSelect
+        data-test-id='members-select'
         isDisabled={disabled}
         value={value}
         onChange={onChange}

@@ -10,7 +10,7 @@ interface UserListProps {
 
 const UserList: React.FC<UserListProps> = ({ items }) => {
   return (
-    <div id='user-list' className='h-full w-full px-6 pt-12 flex flex-col gap-6 lg:px-12 lg:w-auto lg:gap-10'>
+    <div id='user-list' data-test-id='test-user-list' className='h-full w-full px-6 pt-12 flex flex-col gap-6 lg:px-12 lg:w-auto lg:gap-10'>
       <h3 className='text-white text-2xl font-bold flex gap-4 z-20 lg:text-4xl'>
         People <span className='text-neutral-500'>{items.length > 99 ? '(+99)' : `(${items.length})`}</span>
       </h3>

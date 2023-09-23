@@ -101,7 +101,7 @@ const ConversationList: React.FC<ConversationListProps> = ({ initialItems,users 
               {messagesNotSeen.length > 0 ? `(${messagesNotSeen.length})` : '(0)'}
             </span>
           </h3>
-          <button className='text-neutral-500 hover:text-white transition' onClick={() => setIsModalOpen(true)}>
+          <button data-test-id="group-chat" className='text-neutral-500 hover:text-white transition' onClick={() => setIsModalOpen(true)}>
             <IconGroup />
           </button>
         </header>

@@ -20,7 +20,10 @@ const MobileItem: React.FC<MobileItemProps> = ({ label,href,icon,active,onClick,
   }
 
   return (
-    <li onClick={handleClick}>
+    <li
+      data-test-id={icon}
+      onClick={handleClick}
+    >
       <Link
         href={href}
         className={clsx(

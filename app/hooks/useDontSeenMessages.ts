@@ -24,7 +24,7 @@ const useDontSeenMessages = (conversations: FullConversationType[]) : boolean[] 
   // Check if the current user has seen the last messages
   const hasNotSeen = useMemo(() => {
     const notSeen = lastMessages.map((message) => {
-      const seenArray = message.seen || []
+      const seenArray = message ? message.seen : []
       if (!userEmail) return false
       return seenArray.filter((user) => user.email === userEmail).length !== 0
     })

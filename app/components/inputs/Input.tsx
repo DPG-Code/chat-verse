@@ -12,6 +12,7 @@ interface InputProps {
   register: UseFormRegister<FieldValues>
   errors: FieldErrors
   disabled?: boolean
+  test?: string
 }
 
 const Input: React.FC<InputProps> = ({
@@ -22,7 +23,8 @@ const Input: React.FC<InputProps> = ({
   required,
   register,
   errors,
-  disabled
+  disabled,
+  test
 }) => {
   return (
     <div className='flex flex-col'>
@@ -32,6 +34,7 @@ const Input: React.FC<InputProps> = ({
         </label>
       }
       <input
+        data-test-id={`${test && test}`}
         id={id}
         type={type}
         autoComplete={id}

@@ -77,7 +77,7 @@ const Form = () => {
           required
           placeholder='Write a message'
         />
-        <button className='text-white' type='submit'>
+        <button data-test-id='message-form-button' className='text-white' type='submit'>
           <IconSend />
         </button>
       </form>

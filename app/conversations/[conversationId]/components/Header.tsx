@@ -59,7 +59,7 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
             <h4 className='text-white text-xl font-semibold lg:text-2xl'>{conversation.name || otherUser.name}</h4>
             <span className='text-sm font-medium text-neutral-300'>{statusText}</span>
           </div>
-          <button className='ml-auto text-neutral-500 hover:text-white transition' onClick={() => setDrawerOpen(true)}>
+          <button data-test-id='options-conversation' className='ml-auto text-neutral-500 hover:text-white transition' onClick={() => setDrawerOpen(true)}>
             <IconOptions />
           </button>
         </aside>

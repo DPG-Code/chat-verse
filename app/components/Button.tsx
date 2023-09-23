@@ -10,6 +10,7 @@ interface ButtonProps {
   secondary?: boolean
   danger?: boolean
   disabled?: boolean
+  test?: string
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -19,10 +20,12 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   secondary,
   danger,
-  disabled
+  disabled,
+  test
 }) => {
   return (
     <button
+      data-test-id={`${test && test}`}
       type={type}
       onClick={onClick}
       disabled={disabled}
