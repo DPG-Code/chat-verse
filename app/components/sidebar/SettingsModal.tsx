@@ -70,7 +70,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen,onClose,currentUse
         <header className='text-center flex flex-col items-center justify-center gap-2 lg:gap-3'>
           <h2 className='text-center text-white text-3xl font-bold lg:text-5xl'>Profile</h2>
           <p className='text-center text-lg text-neutral-400 font-medium lg:text-xl'>Edit your public information</p>
-          <h3 className='text-center text-white text-xl font-medium lg:text-2xl'>{currentUser.name}</h3>
+          <h3 className='text-center text-white text-xl font-medium lg:text-2xl'>{currentUser?.name}</h3>
           <Input
             disabled={isLoading}
             placeholder='Name'
