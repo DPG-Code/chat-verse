@@ -29,8 +29,8 @@ describe('Chat Functionalities',() => {
     cy.get('[data-test-id="open-modal-delete-conversation"]').click()
     cy.wait(2000)
     cy.get('[data-test-id="test-button-delete"]').click()
-    cy.wait(60000)
-    cy.contains('People')
+    cy.wait(12000)
+    cy.contains('Messages')
   })
 
   it('Should create a new group chat',() => {
