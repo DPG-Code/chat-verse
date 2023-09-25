@@ -65,7 +65,7 @@ const ConversationList: React.FC<ConversationListProps> = ({ initialItems,users 
         return [...current.filter((currentConversation) => currentConversation.id !== conversation.id)]
       })
 
-      if (conversationId === conversation.id) router.push('/conversation')
+      if (conversationId === conversation.id) router.push('/conversations')
     }
 
     // Bind event listeners
