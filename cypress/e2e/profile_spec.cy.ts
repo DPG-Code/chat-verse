@@ -5,24 +5,28 @@ describe('Profile Configuration',() => {
 
   beforeEach(() => {
     cy.visit('http://localhost:3000')
-    cy.fixture('user.json').then((data) => userData = data)
+    cy.fixture('user.json').then((data) => {
+      userData = data
+      expect(userData).to.not.be.null
+      cy.login(userData.email,userData.password)
+    })
+    cy.visit('http://localhost:3000/users')
   })
 
   it('Should rename correctly',() => {
-    cy.login(userData.email,userData.password)
-
     cy.get('[data-test-id="settings-profile"]').click()
-    cy.wait(1000)
-    cy.get('header [data-test-id="settings-input-name"]').type('new username')
+    cy.wait(2000)
+
+    cy.get('[data-test-id="settings-input-name"]').type('new username')
     cy.contains(userData.name)
     cy.get('[data-test-id="test-button-change-profile"]').click()
 
     cy.wait(6000)
 
     cy.get('[data-test-id="settings-profile"]').click()
-    cy.wait(1000)
+    cy.wait(2000)
     cy.contains('new username')
-    cy.get('[data-test-id="settings-input-name"]').type(userData.name)
+    cy.get('[data-test-id="settings-input-name"]').clear().type(userData.name)
     cy.get('[data-test-id="test-button-change-profile"]').click()
   })
 })

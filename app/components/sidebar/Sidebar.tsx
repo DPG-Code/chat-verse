@@ -1,8 +1,7 @@
 import getCurrentUser from "@/app/actions/getCurrentUser"
 import getConversations from "@/app/actions/getConversations"
 
-import DesktopSidebar from "./DesktopSidebar"
-import MobileFooter from "./MobileFooter"
+import SiderbarContent from "./SiderbarContent"
 
 export default async function Sidebar({
   children,
@@ -14,11 +13,7 @@ export default async function Sidebar({
 
   return (
     <div className='h-full w-full flex flex-col items-start relative lg:flex-row'>
-      <DesktopSidebar
-        currentUser={currentUser!}
-        conversations={conversations}
-      />
-      <MobileFooter
+      <SiderbarContent
         currentUser={currentUser!}
         conversations={conversations}
       />

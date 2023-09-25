@@ -3,37 +3,42 @@
 import { useState } from "react"
 import { User } from "@prisma/client"
 import useRoutes from "@/app/hooks/useRoutes"
+import useConversation from "@/app/hooks/useConversation"
 import useDontSeenMessages from "@/app/hooks/useDontSeenMessages"
 import { FullConversationType } from "@/app/types"
 
-import DesktopItem from "./DesktopItem"
+import SiderbarItem from "./SiderbarItem"
 import Avatar from "../Avatar"
 import SettingsModal from "./SettingsModal"
 
-interface DesktopSidebarProps {
+interface SiderbarContentProps {
   currentUser: User
   conversations: FullConversationType[]
 }
 
-const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser,conversations }) => {
+const SiderbarContent: React.FC<SiderbarContentProps> = ({ currentUser,conversations }) => {
   const routes = useRoutes()
-  const [isOpen,setIsOpen] = useState(false)
-
+  const [isModalOpen,setIsModalOpen] = useState(false)
+  const { isOpen } = useConversation()
   const messagesNotSeen = useDontSeenMessages(conversations)
+
+  if (isOpen) return null
 
   return (
     <>
       <SettingsModal
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
         currentUser={currentUser}
       />
-      <aside className='py-12 w-32 h-full bg-neutral-950 hidden absolute left-0 z-30 lg:min-h-[520px] lg:flex lg:flex-col lg:justify-between lg:items-center'>
+      <aside
+        className='bg-neutral-950 z-30 absolute w-full h-24 flex items-center justify-center gap-8 bottom-0 lg:py-12 lg:w-32 lg:h-full lg:left-0 lg:min-h-[520px] lg:flex-col lg:justify-between'
+      >
         <nav>
-          <ul className='flex flex-col items-center gap-16'>
+          <ul className='flex items-center justify-center gap-12 lg:flex-col lg:gap-16'>
             {
               routes.map((route) => (
-                <DesktopItem
+                <SiderbarItem
                   key={route.label}
                   label={route.label}
                   href={route.href}
@@ -46,11 +51,11 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser,conversatio
             }
           </ul>
         </nav>
-        <footer className='cursor-pointer' onClick={() => setIsOpen(true)}>
+        <div data-test-id='settings-profile' className='cursor-pointer' onClick={() => setIsModalOpen(true)}>
           <Avatar user={currentUser} />
-        </footer>
+        </div>
       </aside>
     </>
   )
 }
-export default DesktopSidebar
+export default SiderbarContent

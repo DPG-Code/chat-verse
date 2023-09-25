@@ -5,7 +5,7 @@ import Link from "next/link"
 import { IconsNavbar } from "../IconsNavbar"
 import { IconNavbarType } from "@/app/types"
 
-interface MobileItemProps {
+interface SiderbarItemProps {
   label: string
   href: string
   icon: string
@@ -14,7 +14,7 @@ interface MobileItemProps {
   messagesNotSeen: boolean[]
 }
 
-const MobileItem: React.FC<MobileItemProps> = ({ label,href,icon,active,onClick,messagesNotSeen }) => {
+const SiderbarItem: React.FC<SiderbarItemProps> = ({ label,href,icon,active,onClick,messagesNotSeen }) => {
   const handleClick = () => {
     if (onClick) return onClick()
   }
@@ -34,7 +34,7 @@ const MobileItem: React.FC<MobileItemProps> = ({ label,href,icon,active,onClick,
         <IconsNavbar icon={icon as IconNavbarType} />
         {
           icon as IconNavbarType === "chat" && messagesNotSeen.length > 0 && (
-            <span className='w-2 h-2 bg-red-500 ring-2 ring-neutral-950 rounded-full absolute block top-0 right-0'></span>
+            <span className='w-2 h-2 bg-red-500 ring-2 ring-neutral-950 rounded-full absolute block top-0 right-0 lg:w-3 lg:h-3'></span>
           )
         }
         <strong className='sr-only'>{label}</strong>
@@ -42,4 +42,4 @@ const MobileItem: React.FC<MobileItemProps> = ({ label,href,icon,active,onClick,
     </li>
   )
 }
-export default MobileItem
+export default SiderbarItem
