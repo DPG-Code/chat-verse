@@ -31,7 +31,7 @@ body{
   margin: auto;
   width: 720px;
   height: 720px;
-  background: linear-gradient(125deg,rgb(59, 7, 100) 5%,rgb(59, 7, 100, 15%) 25%,rgb(59, 7, 100, 0%) 100%);
+  background: linear-gradient(125deg,rgb(59, 7, 100) 5%,rgb(59, 7, 100, 35%) 25%,rgb(59, 7, 100, 10%) 100%);
   filter: blur(75px);
   border-radius: 100%;
   position: absolute;
@@ -76,4 +76,11 @@ body{
   position: absolute;
   overflow: hidden;
   z-index: 0;
+}
+
+.button-galaxy {
+  background:
+    radial-gradient( 40% 50% at center 100%, #a855f7, transparent ),
+    radial-gradient( 80% 100% at center 120%, #7e22ce, transparent ),
+    #4c1d95;
 }

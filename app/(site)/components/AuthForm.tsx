@@ -7,7 +7,7 @@ import { useForm,FieldValues,SubmitHandler } from "react-hook-form"
 import axios from "axios"
 import { toast } from "react-hot-toast"
 
-import Button from "@/app/components/Button"
+import ButtonGalaxy from "@/app/components/ButtonGalaxy"
 import Input from "@/app/components/inputs/Input"
 import AuthSocialButton from "./AuthSocialButton"
 import { IconArrowRight } from "@/app/components/Icons"
@@ -107,13 +107,13 @@ const AuthForm = () => {
           errors={errors}
           disabled={isLoading}
         />
-        <Button
+        <ButtonGalaxy
           disabled={isLoading}
           type='submit'
         >
-          {variant === 'LOGIN' ? 'Sign In' : 'Register'}
+          {variant === 'LOGIN' ? 'Sign in' : 'Register'}
           <IconArrowRight />
-        </Button>
+        </ButtonGalaxy>
       </form>
       <span className='text-base text-center text-neutral-500 font-semibold lg:text-lg'>Or continue with</span>
       <div className='w-full flex items-center justify-center gap-2 lg:gap-6'>
@@ -127,9 +127,9 @@ const AuthForm = () => {
         />
       </div>
       <footer className='w-full text-base flex items-center justify-center gap-3 lg:text-xl'>
-        <p className='text-center text-neutral-500 font-medium'>{variant === 'LOGIN' ? 'New to ChatVerse?' : 'Already have an account?'}</p>
+        <p className='text-center text-neutral-400 font-medium'>{variant === 'LOGIN' ? 'New to ChatVerse?' : 'Already have an account?'}</p>
         <button onClick={toggleVariant}>
-          <p className='text-neutral-300 font-semibold underline underline-offset-4 hover:text-white transition'>{variant === 'LOGIN' ? 'Create an account' : 'Login'}</p>
+          <p className='text-neutral-300 font-semibold hover:text-white transition'>{variant === 'LOGIN' ? 'Create an account' : 'Login'}</p>
         </button>
       </footer>
     </div>

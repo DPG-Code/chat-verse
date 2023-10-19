@@ -42,7 +42,7 @@ const Input: React.FC<InputProps> = ({
         {...register(id,{ required })}
         placeholder={placeholder}
         className={clsx(
-          'py-2 px-6 border-0	outline-0 w-full min-w-[260px] text-lg font-medium bg-neutral-900 text-white placeholder:text-neutral-400 rounded-xl lg:w-[420px]',
+          'py-2 px-6 backdrop-blur bg-neutral-300/5	outline-0 w-full min-w-[260px] text-sm font-medium text-white placeholder:text-neutral-400 rounded-full lg:w-[420px] xl:py-3 xl:px-8 xl:w-[520px] xl:text-lg',
           errors[id] && 'focus:ring-offset-2 focus:ring-offset-red-800',
           disabled && 'opacity-50 cursor-default'
         )}

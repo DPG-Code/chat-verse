@@ -10,14 +10,16 @@ const AuthSocialButton: React.FC<AuthSocialButtonProps> = ({ icon,onClick }) => 
     <button
       type='button'
       onClick={onClick}
-      className='py-2.5 px-8 bg-neutral-900 text-white font-medium flex items-center justify-center gap-3 rounded-xl hover:bg-neutral-800 transition lg:px-12 lg:text-xl'
+      className='p-1 w-36 border border-neutral-300 backdrop-blur bg-neutral-400/5 text-white font-light flex items-center justify-between gap-3 rounded-full hover:bg-neutral-400/10 transition lg:text-xl xl:p-2 xl:w-48'
     >
-      {icon}
-      {
-        icon === 'google'
-          ? <IconGoogle />
-          : <IconGithub />
-      }
+      <span className='ml-3 xl:ml-4'>{icon[0].toUpperCase() + icon.slice(1)}</span>
+      <div className='p-1.5 bg-white text-[#0a0a0a] grid place-content-center rounded-full xl:p-2'>
+        {
+          icon === 'google'
+            ? <IconGoogle />
+            : <IconGithub />
+        }
+      </div>
     </button>
   )
 }
