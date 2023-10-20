@@ -89,6 +89,7 @@ const AuthForm = () => {
             register={register}
             errors={errors}
             disabled={isLoading}
+            homeForm
           />
         )}
         <Input
@@ -98,6 +99,7 @@ const AuthForm = () => {
           register={register}
           errors={errors}
           disabled={isLoading}
+          homeForm
         />
         <Input
           id='password'
@@ -106,6 +108,7 @@ const AuthForm = () => {
           register={register}
           errors={errors}
           disabled={isLoading}
+          homeForm
         />
         <ButtonGalaxy
           disabled={isLoading}

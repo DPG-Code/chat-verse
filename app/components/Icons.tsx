@@ -31,14 +31,18 @@ export const IconNewChat = () => {
 
 export const IconGroup = () => {
   return (
-    <svg className="w-6 h-6 lg:w-8 lg:h-8" width={24} height={24} viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-      <path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-      <path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1"></path>
-      <path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-      <path d="M17 10h2a2 2 0 0 1 2 2v1"></path>
-      <path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-      <path d="M3 13v-1a2 2 0 0 1 2 -2h2"></path>
+    <svg
+      className="w-6 h-6"
+      width="24px"
+      height="24px"
+      fill="none"
+      strokeWidth={1.5}
+      viewBox="0 0 24 24"
+      color="currentColor"
+    >
+      <path stroke="currentColor" strokeLinecap="round" d="M1 20v-1a7 7 0 017-7v0a7 7 0 017 7v1" />
+      <path stroke="currentColor" strokeLinecap="round" d="M13 14v0a5 5 0 015-5v0a5 5 0 015 5v.5" />
+      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" d="M8 12a4 4 0 100-8 4 4 0 000 8zm10-3a3 3 0 100-6 3 3 0 000 6z" />
     </svg>
   )
 }
@@ -74,7 +78,7 @@ export const IconOptions = () => {
 
 export const IconPhoto = () => {
   return (
-    <svg className="w-6 h-6 lg:w-8 lg:h-8" width={24} height={24} viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <svg className="w-6 h-6 lg:w-8 lg:h-8 xl:w-10 xl:h-10" width={24} height={24} viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
       <path d="M5 7h1a2 2 0 0 0 2 -2a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1a2 2 0 0 0 2 2h1a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2"></path>
       <path d="M9 13a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
@@ -84,7 +88,7 @@ export const IconPhoto = () => {
 
 export const IconSend = () => {
   return (
-    <svg className="w-6 h-6 lg:w-8 lg:h-8" width={24} height={24} viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <svg className="w-6 h-6 lg:w-8 lg:h-8 xl:w-10 xl:h-10" width={24} height={24} viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
       <path d="M10 14l11 -11"></path>
       <path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"></path>
@@ -94,7 +98,7 @@ export const IconSend = () => {
 
 export const IconTrash = () => {
   return (
-    <svg className="w-6 h-6" width={24} height={24} viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <svg className="w-5 h-5" width={24} height={24} viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
       <path d="M4 7l16 0"></path>
       <path d="M10 11l0 6"></path>

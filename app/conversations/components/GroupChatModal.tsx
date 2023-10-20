@@ -77,6 +77,7 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({ users,isOpen,onClose })
           disabled={isLoading}
           required
           errors={errors}
+          fullWidth
         />
         <Select
           label='Members'

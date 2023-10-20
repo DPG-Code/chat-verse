@@ -28,7 +28,7 @@ const UserBox: React.FC<UserBoxProps> = ({ data }) => {
   return (
     <>
       <div
-        className='p-4 w-full min-w-[220px] cursor-pointer border-2 border-neutral-900 flex items-center justify-start rounded-xl hover:bg-neutral-900 gap-6 transition relative lg:w-96'
+        className='p-4 w-full min-w-[220px] cursor-pointer flex items-center justify-start rounded-full backdrop-blur hover:bg-white/5 gap-6 transition relative lg:w-96'
         onClick={handleClick}
       >
         {isLoading && (
@@ -39,7 +39,7 @@ const UserBox: React.FC<UserBoxProps> = ({ data }) => {
           </div>
         )}
         <Avatar user={data} />
-        <p className='text-xl text-white font-medium truncate lg:text-2xl'>{data.name}</p>
+        <p className='text-xl text-white font-normal truncate lg:text-2xl'>{data.name}</p>
       </div>
     </>
   )

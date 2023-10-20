@@ -42,10 +42,10 @@ const MessageBox: React.FC<MessageBoxPops> = ({ data,isLast }) => {
   )
 
   const message = clsx(
-    'text-lg font-light w-fit overflow-hidden lg:texl-xl',
-    isOwn ? 'bg-fuchsia-800/25 text-white' : 'bg-neutral-900 text-white',
-    (!data.image && isOwn) && 'rounded-l-2xl rounded-b-2xl p-2 px-4',
-    (!data.image && !isOwn) && 'rounded-r-2xl rounded-b-2xl p-2 px-4',
+    'text-base font-light w-fit overflow-hidden lg:texl-xl xl:text-2xl',
+    isOwn ? 'bg-violet-700/30 text-white' : 'bg-neutral-900 text-white',
+    (!data.image && isOwn) && 'rounded-l-2xl rounded-b-2xl p-2 px-4 xl:p-4 xl:px-6',
+    (!data.image && !isOwn) && 'rounded-r-2xl rounded-b-2xl p-2 px-4 xl:p-4 xl:px-6',
     data.image && 'w-52 h-52 p-0 rounded-2xl lg:w-96 lg:h-96'
   )
 

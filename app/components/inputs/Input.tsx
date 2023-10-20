@@ -8,6 +8,8 @@ interface InputProps {
   placeholder?: string
   id: string
   type?: string
+  fullWidth?: boolean
+  homeForm?: boolean
   required?: boolean
   register: UseFormRegister<FieldValues>
   errors: FieldErrors
@@ -20,6 +22,8 @@ const Input: React.FC<InputProps> = ({
   placeholder,
   id,
   type,
+  fullWidth,
+  homeForm,
   required,
   register,
   errors,
@@ -27,7 +31,12 @@ const Input: React.FC<InputProps> = ({
   test
 }) => {
   return (
-    <div className='flex flex-col'>
+    <div
+      className={clsx(
+        'flex flex-col',
+        fullWidth && 'w-full'
+      )}
+    >
       {
         label && <label className='mb-1 text-neutral-400 font-semibold' htmlFor={id}>
           {label}
@@ -42,9 +51,11 @@ const Input: React.FC<InputProps> = ({
         {...register(id,{ required })}
         placeholder={placeholder}
         className={clsx(
-          'py-2 px-6 backdrop-blur bg-neutral-300/5	outline-0 w-full min-w-[260px] text-sm font-medium text-white placeholder:text-neutral-400 rounded-full lg:w-[420px] xl:py-3 xl:px-8 xl:w-[520px] xl:text-lg',
+          'py-2 px-6 w-auto backdrop-blur bg-neutral-300/5 outline-0 text-sm font-medium text-white placeholder:text-neutral-400 rounded-full xl:py-3 xl:px-8 xl:text-lg',
           errors[id] && 'focus:ring-offset-2 focus:ring-offset-red-800',
-          disabled && 'opacity-50 cursor-default'
+          disabled && 'opacity-50 cursor-default',
+          homeForm && 'min-w-[260px] lg:w-[420px] xl:w-[520px]',
+          fullWidth && 'w-full'
         )}
       />
     </div>

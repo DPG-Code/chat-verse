@@ -26,7 +26,7 @@ const ButtonGalaxy: React.FC<ButtonGalaxyProps> = ({
       onClick={onClick}
       disabled={disabled}
       className={clsx(
-        'button-galaxy shadow-[0px_0px_32px_#4c1d95] py-1.5 px-10 border-2 border-violet-700 outline-0 font-medium text-lg text-white flex items-center justify-center gap-2 rounded-full lg:text-xl lg:py-3 lg:px-16 lg:gap-3 xl:border-4',
+        'button-galaxy shadow-[0px_0px_32px_#4c1d95] py-1.5 px-10 border-2 border-violet-700 outline-0 font-medium text-lg text-white flex items-center justify-center gap-2 rounded-full transition lg:text-xl lg:py-3 lg:px-16 lg:gap-3 xl:border-4',
         disabled && 'opacity-50 cursor-default',
         fullWidth && 'w-full'
       )}

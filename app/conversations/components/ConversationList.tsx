@@ -101,8 +101,16 @@ const ConversationList: React.FC<ConversationListProps> = ({ initialItems,users 
               {messagesNotSeen.length > 0 ? `(${messagesNotSeen.length})` : '(0)'}
             </span>
           </h3>
-          <button data-test-id="group-chat" className='text-neutral-500 hover:text-white transition' onClick={() => setIsModalOpen(true)}>
-            <IconGroup />
+          <button data-test-id="group-chat" onClick={() => setIsModalOpen(true)}>
+            <div className='block text-neutral-500 hover:text-white transition lg:hidden'>
+              <IconGroup />
+            </div>
+            <div className='hidden p-1.5 w-auto border border-neutral-300 backdrop-blur bg-neutral-400/5 text-white font-light text-xl items-center justify-between gap-6 rounded-full hover:bg-neutral-400/10 transition lg:flex'>
+              <span className='ml-3'>New group</span>
+              <div className='p-2 bg-white text-[#0a0a0a] grid place-content-center rounded-full'>
+                <IconGroup />
+              </div>
+            </div>
           </button>
         </header>
         <div className='h-full w-full flex flex-col overflow-y-scroll z-20'>

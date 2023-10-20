@@ -18,7 +18,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen,onClose,children }) => {
 
   return (
     <div
-      className={`${isOpen ? 'flex' : 'hidden'} w-full h-full min-h-[560px] backdrop-blur items-center justify-center fixed top-0 right-0 z-40 lg:min-h-[620px]`}
+      className={`${isOpen ? 'flex' : 'hidden'} w-full h-full min-h-[560px] backdrop-blur-lg bg-neutral-950/50 items-center justify-center fixed top-0 right-0 z-40 lg:min-h-[620px]`}
     >
       <motion.div
         id='modal'

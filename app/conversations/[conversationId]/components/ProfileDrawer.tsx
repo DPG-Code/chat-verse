@@ -65,7 +65,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({ data,isOpen,onClose }) =>
         onClose={() => setConfirmOpen(false)}
       />
       <motion.section
-        className={`${isOpen ? 'flex' : 'hidden'} w-full h-full backdrop-blur flex justify-end absolute z-30 overflow-hidden lg:-ml-32`}
+        className={`${isOpen ? 'flex' : 'hidden'} w-full h-full backdrop-blur bg-neutral-950/25 flex justify-end absolute z-30 overflow-hidden lg:-ml-32`}
         animate={isOpen ? "open" : "closed"}
         variants={variantsContainer}
       >
@@ -85,7 +85,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({ data,isOpen,onClose }) =>
             <p className='-mt-4 text-base font-medium text-neutral-300 lg:text-lg'>{statusText}</p>
             <button
               data-test-id='open-modal-delete-conversation'
-              className='py-2.5 px-12 bg-neutral-900 text-white font-bold flex items-center justify-center gap-2 rounded-xl hover:bg-neutral-800 transition'
+              className='py-2.5 px-12 backdrop-blur bg-neutral-300/5 text-white font-medium flex items-center justify-center gap-3 rounded-full hover:bg-neutral-300/10 transition'
               onClick={() => setConfirmOpen(true)}
             >
               <span>Delete</span>
