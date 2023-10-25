@@ -1,7 +1,6 @@
 'use client'
 
 import { User } from "@prisma/client"
-import Image from "next/image"
 
 interface AvatarGoupProps {
   users: User[]
@@ -15,7 +14,7 @@ const AvatarGroup: React.FC<AvatarGoupProps> = ({ users = [] }) => {
       {
         slicedMembers.map((member) => (
           <div key={member.id} className='w-full h-full relative'>
-            <Image
+            <img
               className='w-full h-full'
               width='48'
               height='48'

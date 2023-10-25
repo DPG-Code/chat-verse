@@ -1,7 +1,6 @@
 'use client'
 
 import { User } from "@prisma/client"
-import Image from "next/image"
 import useActiveList from "../hooks/useActiveList"
 
 interface AvatarProps {
@@ -17,7 +16,7 @@ const Avatar: React.FC<AvatarProps> = ({ user }) => {
   return (
     <div className='relative'>
       <div className='w-8 h-8 rounded-full overflow-hidden relative lg:w-12 lg:h-12'>
-        <Image
+        <img
           className='w-full h-full'
           width='48'
           height='48'

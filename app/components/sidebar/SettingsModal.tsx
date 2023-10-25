@@ -85,7 +85,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen,onClose,currentUse
         <section className='flex flex-col items-center justify-center text-white gap-2 lg:gap-4'>
           <label className='text-white text-2xl font-semibold lg:text-3xl'>Photo</label>
           <div className='w-24 h-24 flex items-center justify-center relative lg:w-32 lg:h-32'>
-            <Image
+            <img
               className='w-full h-full rounded-full object-cover absolute z-40'
               width='96'
               height='96'

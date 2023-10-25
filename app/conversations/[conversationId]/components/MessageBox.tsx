@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { useSession } from "next-auth/react"
-import Image from "next/image"
 import clsx from "clsx"
 import { format } from "date-fns"
 import { FullMessageType } from "@/app/types"
@@ -67,7 +66,7 @@ const MessageBox: React.FC<MessageBoxPops> = ({ data,isLast }) => {
           />
           {
             data.image ? (
-              <Image
+              <img
                 onClick={() => setImageModalOpen(true)}
                 src={data.image}
                 width='208'
