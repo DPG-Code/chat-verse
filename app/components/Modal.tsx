@@ -28,7 +28,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen,onClose,children }) => {
       >
         <button
           type='button'
-          className='text-white absolute top-6 right-6 z-50'
+          className='text-white absolute top-6 right-6 z-[100]'
           onClick={onClose}
         >
           <IconClose />

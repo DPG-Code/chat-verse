@@ -14,7 +14,7 @@ const UserList: React.FC<UserListProps> = ({ items }) => {
       <h3 className='text-white text-2xl font-bold flex gap-4 z-20 lg:text-4xl'>
         People <span className='text-neutral-500'>{items.length > 99 ? '(+99)' : `(${items.length})`}</span>
       </h3>
-      <section className='h-full w-full flex flex-col overflow-y-scroll gap-4 z-20'>
+      <section className='pb-6 h-full w-full flex flex-col overflow-y-scroll gap-4 z-20 2xl:pb-12'>
         {
           items.map((item) => (
             <UserBox

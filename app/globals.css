@@ -15,7 +15,7 @@ body,
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgb(64 64 64);
+  background: rgba(64, 64, 64, 0.25);
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -66,7 +66,7 @@ body{
   z-index: 0;
 }
 
-#modal::before {
+/* #modal::before {
   content: "";
   margin: auto;
   width: 160px;
@@ -76,6 +76,10 @@ body{
   position: absolute;
   overflow: hidden;
   z-index: 0;
+} */
+
+.tooltip .tooltiptext, .tooltip .tooltiptext-profile {
+  display: none;
 }
 
 .button-galaxy {
@@ -91,4 +95,32 @@ body{
     radial-gradient( 40% 50% at center 100%, #a855f7, transparent ),
     radial-gradient( 80% 100% at center 120%, #a855f7, transparent ),
     #4c1d95;
+}
+
+@media only screen and (min-width: 1024px) {
+  .tooltip {
+    position: relative;
+  }
+  .tooltip .tooltiptext, .tooltip .tooltiptext-profile {
+    margin-top: -32px;
+    left: 52px;
+    visibility: hidden;
+    padding: 6px 16px;
+    background-color: #0a0a0a;
+    color: #ffffff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 8px;
+    position: absolute;
+    display: block;
+    z-index: 1;
+  }
+  .tooltip .tooltiptext-profile {
+    margin-top: -48px;
+    left: 72px;
+  }
+  .tooltip:hover .tooltiptext, .tooltip:hover .tooltiptext-profile {
+    visibility: visible;
+  }
 }

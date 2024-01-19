@@ -27,7 +27,7 @@ const SiderbarItem: React.FC<SiderbarItemProps> = ({ label,href,icon,active,onCl
       <Link
         href={href}
         className={clsx(
-          'text-neutral-400 hover:text-white transition relative',
+          'tooltip text-neutral-400 hover:text-white transition relative',
           active && 'text-white'
         )}
       >
@@ -37,7 +37,7 @@ const SiderbarItem: React.FC<SiderbarItemProps> = ({ label,href,icon,active,onCl
             <span className='w-2 h-2 bg-red-500 ring-2 ring-neutral-950 rounded-full absolute block top-0 right-0 lg:w-3 lg:h-3'></span>
           )
         }
-        <strong className='sr-only'>{label}</strong>
+        <span className='tooltiptext'>{label}</span>
       </Link>
     </li>
   )
