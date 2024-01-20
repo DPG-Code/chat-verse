@@ -12,7 +12,7 @@ export default async function Sidebar({
   const conversations = await getConversations()
 
   return (
-    <div className='h-full w-full flex flex-col items-start relative lg:flex-row'>
+    <div className='h-full w-full flex flex-col items-start relative lg:min-h-[520px] lg:flex-row'>
       <SiderbarContent
         currentUser={currentUser!}
         conversations={conversations}

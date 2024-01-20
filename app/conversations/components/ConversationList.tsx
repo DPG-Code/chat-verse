@@ -91,24 +91,30 @@ const ConversationList: React.FC<ConversationListProps> = ({ initialItems,users 
         onClose={() => setIsModalOpen(false)}
       />
       <section id='conversation-container' className={clsx(
-        'px-6 pt-12 w-full flex flex-col overflow-hidden lg:px-12 gap-10',
+        'w-full flex flex-col overflow-hidden gap-10',
         isOpen ? 'hidden' : 'block'
       )}>
-        <header className='flex items-center justify-between z-20'>
-          <h3 className='text-white text-2xl font-bold flex gap-4 lg:text-4xl'>
+        <header className='px-6 pt-12 flex items-center justify-between z-20 2xl:px-12'>
+          <h3 className='text-white text-2xl font-semibold flex items-center gap-4 lg:text-3xl'>
             Messages
-            <span className={`${messagesNotSeen.length > 0 ? 'text-fuchsia-700' : 'text-neutral-500'}`}>
-              {messagesNotSeen.length > 0 ? `(${messagesNotSeen.length})` : '(0)'}
-            </span>
+            <p className={`w-7 h-7 flex items-center justify-center text-xs rounded-full text-white lg:w-8 lg:h-8 2xl:w-10 2xl:h-10 2xl:text-sm ${messagesNotSeen.length > 0 ? 'bg-fuchsia-700/50' : 'bg-neutral-700'}`}>
+              {
+                messagesNotSeen.length === 0
+                  ? '0'
+                  : messagesNotSeen.length < 100
+                    ? `${messagesNotSeen.length}`
+                    : '+99'
+              }
+            </p>
           </h3>
           <button data-test-id="group-chat" onClick={() => setIsModalOpen(true)}>
             <div className='block text-neutral-500 hover:text-white transition lg:hidden'>
-              <IconGroup />
+              <IconGroup size='w-7 h-7' />
             </div>
             <div className='hidden p-1.5 w-auto border border-neutral-300 backdrop-blur bg-neutral-400/5 text-white font-light text-xl items-center justify-between gap-6 rounded-full hover:bg-neutral-400/10 transition lg:flex'>
               <span className='ml-3'>New group</span>
               <div className='p-2 bg-white text-[#0a0a0a] grid place-content-center rounded-full'>
-                <IconGroup />
+                <IconGroup size='w-6 h-6 2xl:w-8 2xl:h-8' />
               </div>
             </div>
           </button>

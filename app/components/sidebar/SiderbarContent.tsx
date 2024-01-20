@@ -32,7 +32,7 @@ const SiderbarContent: React.FC<SiderbarContentProps> = ({ currentUser,conversat
         currentUser={currentUser}
       />
       <aside
-        className={`${isOpen ? 'hidden lg:flex' : 'flex'} bg-neutral-950 z-30 absolute w-full h-24 items-center justify-center gap-10 bottom-0 lg:py-12 lg:w-32 lg:h-full lg:left-0 lg:min-h-[520px] lg:flex-col lg:justify-between`}
+        className={`${isOpen ? 'hidden lg:flex' : 'flex'} bg-neutral-950 z-30 absolute w-full h-24 items-center justify-center gap-10 bottom-0 lg:py-12 lg:w-28 lg:h-full lg:left-0 lg:min-h-[520px] lg:border-r lg:border-neutral-700 lg:flex-col lg:justify-between 2xl:w-32`}
       >
         <nav>
           <ul className='flex items-center justify-center gap-12 lg:flex-col lg:gap-16'>

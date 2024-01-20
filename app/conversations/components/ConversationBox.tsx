@@ -61,7 +61,7 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({ data,seleted }) => {
   return (
     <div
       className={clsx(
-        'p-4 w-full flex items-center gap-6 cursor-pointer rounded-xl backdrop-blur hover:bg-white/5 transition lg:w-96 2xl:w-[620px] 2xl:p-6',
+        'p-4 px-6 w-full flex items-center gap-6 cursor-pointer border-l-[6px] border-transparent hover:border-white hover:bg-white/5 transition lg:w-[420px] 2xl:w-[720px] 2xl:px-7 2xl:py-6',
         seleted && 'bg-gray-900'
       )}
       onClick={handleClick}

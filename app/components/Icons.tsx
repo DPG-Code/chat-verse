@@ -29,20 +29,10 @@ export const IconNewChat = () => {
   )
 }
 
-export const IconGroup = () => {
+export const IconGroup = ({ size }: { size: string }) => {
   return (
-    <svg
-      className="w-6 h-6"
-      width="24px"
-      height="24px"
-      fill="none"
-      strokeWidth={1.5}
-      viewBox="0 0 24 24"
-      color="currentColor"
-    >
-      <path stroke="currentColor" strokeLinecap="round" d="M1 20v-1a7 7 0 017-7v0a7 7 0 017 7v1" />
-      <path stroke="currentColor" strokeLinecap="round" d="M13 14v0a5 5 0 015-5v0a5 5 0 015 5v.5" />
-      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" d="M8 12a4 4 0 100-8 4 4 0 000 8zm10-3a3 3 0 100-6 3 3 0 000 6z" />
+    <svg className={size} xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20">
+      <path fill="currentColor" d="M7 8a3 3 0 1 0 0-6a3 3 0 0 0 0 6m7.5 1a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5M1.615 16.428a1.224 1.224 0 0 1-.569-1.175a6.002 6.002 0 0 1 11.908 0c.058.467-.172.92-.57 1.174A9.953 9.953 0 0 1 7 18a9.953 9.953 0 0 1-5.385-1.572M14.5 16h-.106c.07-.297.088-.611.048-.933a7.47 7.47 0 0 0-1.588-3.755a4.502 4.502 0 0 1 5.874 2.636a.818.818 0 0 1-.36.98A7.465 7.465 0 0 1 14.5 16" />
     </svg>
   )
 }
@@ -162,6 +152,14 @@ export const IconPlus = () => {
       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
       <path d="M12 5l0 14"></path>
       <path d="M5 12l14 0"></path>
+    </svg>
+  )
+}
+
+export const IconSearch = ({ size }: { size: string }) => {
+  return (
+    <svg className={size} xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314" />
     </svg>
   )
 }
