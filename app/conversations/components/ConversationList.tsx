@@ -37,8 +37,14 @@ const ConversationList: React.FC<ConversationListProps> = ({ initialItems,users 
 
   const filterConversations = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchTerm = e.target.value.toLowerCase()
-    const filtered = items.filter(conversation => conversation.name?.toLocaleLowerCase().includes(searchTerm) || conversation.users[1].name?.toLocaleLowerCase().includes(searchTerm))
-    setFilteredConversation(filtered)
+    if (searchTerm === '') setFilteredConversation(items)
+    else {
+      const filtered = items.filter((conversation) =>
+        conversation.name?.toLocaleLowerCase().includes(searchTerm) ||
+        conversation.users[1].name?.toLocaleLowerCase().includes(searchTerm)
+      )
+      setFilteredConversation(filtered)
+    }
   }
 
   useEffect(() => {
@@ -133,7 +139,7 @@ const ConversationList: React.FC<ConversationListProps> = ({ initialItems,users 
             placeholder='Search conversations...'
             onChange={filterConversations}
           />
-          <IconSearch size='w-6 h-6 text-neutral-500 absolute right-6 2xl:right-7' />
+          <IconSearch size='w-6 h-6 text-neutral-500 absolute right-12 lg:right-6 2xl:right-7' />
         </div>
         <div className='h-full w-full flex flex-col overflow-y-scroll z-20'>
           {
