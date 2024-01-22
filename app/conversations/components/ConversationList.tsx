@@ -13,7 +13,7 @@ import useDontSeenMessages from "@/app/hooks/useDontSeenMessages"
 
 import ConversationBox from "./ConversationBox"
 import GroupChatModal from "./GroupChatModal"
-import { IconGroup } from "@/app/components/Icons"
+import { IconGroup,IconSearch } from "@/app/components/Icons"
 
 interface ConversationListProps {
   initialItems: FullConversationType[]
@@ -23,6 +23,7 @@ interface ConversationListProps {
 const ConversationList: React.FC<ConversationListProps> = ({ initialItems,users }) => {
   const session = useSession()
   const [items,setItems] = useState(initialItems)
+  const [filteredConversation,setFilteredConversation] = useState<FullConversationType[]>(items)
   const [isModalOpen,setIsModalOpen] = useState(false)
   const messagesNotSeen = useDontSeenMessages(initialItems)
 
@@ -33,6 +34,12 @@ const ConversationList: React.FC<ConversationListProps> = ({ initialItems,users 
   const pusherKey = useMemo(() => {
     return session.data?.user?.email
   },[session.data?.user?.email])
+
+  const filterConversations = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const searchTerm = e.target.value.toLowerCase()
+    const filtered = items.filter(conversation => conversation.name?.toLocaleLowerCase().includes(searchTerm) || conversation.users[1].name?.toLocaleLowerCase().includes(searchTerm))
+    setFilteredConversation(filtered)
+  }
 
   useEffect(() => {
     if (!pusherKey) return
@@ -91,7 +98,7 @@ const ConversationList: React.FC<ConversationListProps> = ({ initialItems,users 
         onClose={() => setIsModalOpen(false)}
       />
       <section id='conversation-container' className={clsx(
-        'w-full flex flex-col overflow-hidden gap-10',
+        'w-full flex flex-col overflow-hidden gap-6 lg:gap-10',
         isOpen ? 'hidden' : 'block'
       )}>
         <header className='px-6 pt-12 flex items-center justify-between z-20 2xl:px-12'>
@@ -119,9 +126,18 @@ const ConversationList: React.FC<ConversationListProps> = ({ initialItems,users 
             </div>
           </button>
         </header>
+        <div className='px-6 w-full flex relative items-center lg:pr-0 lg:w-[420px] 2xl:pr-0 2xl:w-[720px] 2xl:px-12'>
+          <input
+            className='py-2 px-6 border border-neutral-700 outline-0 w-full text-lg bg-neutral-900 text-white placeholder:text-neutral-500 rounded-xl 2xl:py-3 2xl:px-7 2xl:text-xl'
+            type='text'
+            placeholder='Search conversations...'
+            onChange={filterConversations}
+          />
+          <IconSearch size='w-6 h-6 text-neutral-500 absolute right-6 2xl:right-7' />
+        </div>
         <div className='h-full w-full flex flex-col overflow-y-scroll z-20'>
           {
-            items.map((item) => (
+            filteredConversation.map((item) => (
               <ConversationBox
                 key={item.id}
                 data={item}

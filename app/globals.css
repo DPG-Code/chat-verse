@@ -89,7 +89,6 @@ body{
     border-radius: 8px;
     position: absolute;
     display: block;
-    z-index: 1;
   }
   .tooltip .tooltiptext-profile {
     margin-top: -48px;
