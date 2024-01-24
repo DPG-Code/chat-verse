@@ -19,7 +19,7 @@ const AvatarGroup: React.FC<AvatarGoupProps> = ({ users = [] }) => {
               width='48'
               height='48'
               alt='group avatar'
-              src={member?.image || '/images/no-profile-picture.png'}
+              src={member?.image || '/images/no-profile-picture.webp'}
             />
           </div>
         ))

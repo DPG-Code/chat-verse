@@ -21,7 +21,7 @@ const Avatar: React.FC<AvatarProps> = ({ user }) => {
           width='48'
           height='48'
           alt='Avatar'
-          src={user?.image || '/images/no-profile-picture.png'}
+          src={user?.image || '/images/no-profile-picture.webp'}
         />
       </div>
       {

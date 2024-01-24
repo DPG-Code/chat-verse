@@ -90,7 +90,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen,onClose,currentUse
               width='96'
               height='96'
               alt='Avatar'
-              src={image || currentUser?.image || '/images/no-profile-picture.png'}
+              src={image || currentUser?.image || '/images/no-profile-picture.webp'}
             />
             <div className='w-full h-full backdrop-blur-[1px] bg-neutral-950/25 grid place-content-center absolute z-50'>
               <CldUploadButton
