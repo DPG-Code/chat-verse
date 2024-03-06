@@ -41,11 +41,11 @@ const MessageBox: React.FC<MessageBoxPops> = ({ data,isLast }) => {
   )
 
   const message = clsx(
-    'text-base font-light w-fit overflow-hidden lg:texl-xl xl:text-2xl',
-    isOwn ? 'bg-violet-700/30 text-white' : 'bg-neutral-900 text-white',
-    (!data.image && isOwn) && 'rounded-l-2xl rounded-b-2xl p-2 px-4 xl:p-4 xl:px-6',
-    (!data.image && !isOwn) && 'rounded-r-2xl rounded-b-2xl p-2 px-4 xl:p-4 xl:px-6',
-    data.image && 'w-52 h-52 p-0 rounded-2xl lg:w-96 lg:h-96'
+    'text-sm font-light w-fit overflow-hidden lg:texl-lg xl:text-2xl',
+    isOwn ? 'bg-violet-700/15 text-white' : 'bg-neutral-900 text-white',
+    (!data.image && isOwn) && 'rounded-l-2xl rounded-b-2xl p-4 xl:p-6 sm:max-w-[600px] 2xl:max-w-[720px]',
+    (!data.image && !isOwn) && 'rounded-r-2xl rounded-b-2xl p-4 xl:p-6 sm:max-w-[600px] 2xl:max-w-[720px]',
+    data.image && 'p-4 rounded-2xl'
   )
 
   return (
@@ -69,9 +69,7 @@ const MessageBox: React.FC<MessageBoxPops> = ({ data,isLast }) => {
               <img
                 onClick={() => setImageModalOpen(true)}
                 src={data.image}
-                width='208'
-                height='208'
-                className='w-52 h-52 rounded-xl object-cover cursor-pointer lg:w-96 lg:h-96'
+                className='w-full max-w-[240px] h-auto rounded-xl object-cover cursor-pointer lg:max-w-[420px] 2xl:max-w-[620px]'
                 alt='image'
               />
             ) : (

@@ -83,7 +83,7 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({ data,seleted }) => {
         </header>
         <footer className='flex items-center justify-between'>
           <p className={clsx(
-            'text-sm truncate 2xl:text-lg',
+            'max-w-[220px] text-sm truncate 2xl:max-w-[420px] 2xl:text-lg',
             hasSeen ? 'text-neutral-500' : 'text-white'
           )}>
             {lastMessageText}
