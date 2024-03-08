@@ -10,7 +10,7 @@ import { motion } from 'framer-motion'
 import ConfirmModal from './ConfirmModal'
 import Avatar from '@/app/components/Avatar'
 import AvatarGroup from '@/app/components/AvatarGroup'
-import { IconClose,IconTrash } from '@/app/components/Icons'
+import { IconClose,IconGroup,IconTrash } from '@/app/components/Icons'
 
 interface ProfileDrawerProps {
   data: Conversation & {
@@ -42,7 +42,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({ data,isOpen,onClose }) =>
   // Get the status text, which is the number of members for groups or "Active" for individual users
   const statusText = useMemo(() => {
     if (data.isGroup) {
-      return `${data.users.length} members`
+      return `${data.users.length} Members`
     }
 
     return isActive ? 'Active' : 'Offline'
@@ -70,7 +70,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({ data,isOpen,onClose }) =>
         variants={variantsContainer}
       >
         <motion.div
-          className='px-12 h-full bg-neutral-950 shadow-2xl flex flex-col items-center justify-center overflow-y-scroll gap-8 lg:px-16'
+          className='px-6 pt-20 h-full bg-neutral-950 shadow-2xl flex flex-col overflow-y-scroll gap-8 relative lg:px-16 lg:pt-24'
           animate={isOpen ? "open" : "closed"}
           variants={variantsModal}
         >
@@ -82,40 +82,43 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({ data,isOpen,onClose }) =>
             )
             }
             <h3 className='text-white text-2xl font-semibold lg:text-4xl'>{title}</h3>
-            <p className='-mt-4 text-base font-medium text-neutral-300 lg:text-lg'>{statusText}</p>
-            <button
-              data-test-id='open-modal-delete-conversation'
-              className='py-2.5 px-12 backdrop-blur bg-neutral-300/5 text-white font-medium flex items-center justify-center gap-3 rounded-full hover:bg-neutral-300/10 transition'
-              onClick={() => setConfirmOpen(true)}
-            >
-              <span>Delete</span>
-              <IconTrash />
-            </button>
+            <p className='-mt-4 text-base font-medium text-neutral-400 lg:text-lg'>{statusText}</p>
           </header>
           {/* Information members group */}
           {data.isGroup && (
-            <article className='w-full flex flex-col gap-1'>
-              <h5 className='text-white text-base font-semibold sm:flex-shrink-0 lg:text-lg'>Emails</h5>
+            <article className='px-4 py-2 w-full flex flex-col gap-2 bg-neutral-900 rounded-lg 2xl:px-6 2xl:py-3 2xl:rounded-xl'>
+              <div className='flex items-center gap-2'>
+                <IconGroup size='text-white w-5 h-5' />
+                <h5 className='text-white text-base font-semibold sm:flex-shrink-0 lg:text-lg 2xl:text-xl'>Team Members ({data.users.length})</h5>
+              </div>
               <div className='w-full flex flex-col'>
-                {data.users.map((user,i) => <p key={i} className='text-neutral-500 text-sm font-semibold truncate lg:text-base'>{user.email}</p>)}
+                {data.users.map((user,i) => <p key={i} className='text-neutral-400 text-sm font-semibold truncate lg:text-base 2xl:text-lg'>{user.email}</p>)}
               </div>
             </article>
           )}
           {/* Information no group */}
           {!data.isGroup && (
-            <article className='w-full flex flex-col gap-1'>
-              <h5 className='text-white text-base font-semibold sm:flex-shrink-0 lg:text-lg'>Email</h5>
-              <p className='text-neutral-500 text-sm font-semibold lg:text-base'>{otherUser.email}</p>
+            <article className='px-4 py-2 w-full flex flex-col gap-1 bg-neutral-900 rounded-lg 2xl:px-6 2xl:py-3 2xl:rounded-xl'>
+              <h5 className='text-white text-base font-semibold sm:flex-shrink-0 lg:text-lg 2xl:text-xl'>Email</h5>
+              <p className='text-neutral-500 text-sm font-semibold lg:text-base 2xl:text-lg'>{otherUser.email}</p>
             </article>
           )}
           {!data.isGroup && (
-            <article className='w-full flex flex-col gap-1'>
-              <h5 className='text-white text-base font-semibold sm:flex-shrink-0 lg:text-lg'>Joined</h5>
-              <time className='text-neutral-500 text-sm font-semibold lg:text-base' dateTime={joinedData}>{joinedData}</time>
+            <article className='px-4 py-2 w-full flex flex-col gap-1 bg-neutral-900 rounded-lg 2xl:px-6 2xl:py-3 2xl:rounded-xl'>
+              <h5 className='text-white text-base font-semibold sm:flex-shrink-0 lg:text-lg 2xl:text-xl'>Joined</h5>
+              <time className='text-neutral-500 text-sm font-semibold lg:text-base 2xl:text-lg' dateTime={joinedData}>{joinedData}</time>
             </article>
           )}
           <button
-            className='text-white'
+            data-test-id='open-modal-delete-conversation'
+            className='py-2.5 px-12 backdrop-blur bg-neutral-300/5 text-white font-medium flex items-center justify-center gap-3 rounded-full hover:bg-neutral-300/10 transition'
+            onClick={() => setConfirmOpen(true)}
+          >
+            <span>Delete</span>
+            <IconTrash />
+          </button>
+          <button
+            className='text-white absolute top-8 right-8'
             type='button'
             onClick={onClose}
           >
