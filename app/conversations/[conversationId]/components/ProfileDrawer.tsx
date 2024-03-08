@@ -92,7 +92,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({ data,isOpen,onClose }) =>
                 <h5 className='text-white text-base font-semibold sm:flex-shrink-0 lg:text-lg 2xl:text-xl'>Team Members ({data.users.length})</h5>
               </div>
               <div className='w-full flex flex-col'>
-                {data.users.map((user,i) => <p key={i} className='text-neutral-400 text-sm font-semibold truncate lg:text-base 2xl:text-lg'>{user.email}</p>)}
+                {data.users.map((user,i) => <p key={i} className='text-neutral-400 text-sm font-medium truncate lg:text-base 2xl:text-lg'>{user.email}</p>)}
               </div>
             </article>
           )}
