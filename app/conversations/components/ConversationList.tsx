@@ -132,7 +132,7 @@ const ConversationList: React.FC<ConversationListProps> = ({ initialItems,users 
             </div>
           </button>
         </header>
-        <div className='px-6 w-full flex relative items-center lg:pr-0 lg:w-[420px] 2xl:pr-0 2xl:w-[720px] 2xl:px-12'>
+        <div className='px-6 w-full flex relative items-center lg:pr-0 lg:w-[460px] 2xl:pr-0 2xl:w-[740px] 2xl:px-12'>
           <input
             className='py-2 px-6 border border-neutral-700 outline-0 w-full text-lg bg-neutral-900 text-white placeholder:text-neutral-500 rounded-xl 2xl:py-3 2xl:px-7 2xl:text-xl'
             type='text'

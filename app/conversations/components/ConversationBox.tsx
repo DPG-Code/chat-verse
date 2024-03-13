@@ -61,7 +61,7 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({ data,seleted }) => {
   return (
     <div
       className={clsx(
-        'p-4 px-6 w-full flex items-center gap-6 cursor-pointer border-l-[6px] border-transparent hover:border-white hover:bg-white/5 transition lg:w-[420px] 2xl:w-[720px] 2xl:px-12 2xl:py-6',
+        'p-4 px-6 w-full flex items-center gap-6 cursor-pointer border-l-[6px] border-transparent hover:border-white hover:bg-white/5 transition lg:w-[460px] 2xl:w-[740px] 2xl:px-12 2xl:py-6',
         seleted && 'bg-gray-900'
       )}
       onClick={handleClick}
@@ -72,7 +72,7 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({ data,seleted }) => {
         <Avatar user={otherUser} />
       )
       }
-      <section className='w-full flex flex-col'>
+      <section className='grow flex flex-col'>
         <header className='flex items-center justify-between'>
           <h5 className='text-white text-base font-semibold truncate 2xl:text-xl'>{data.name || otherUser.name}</h5>
           {
