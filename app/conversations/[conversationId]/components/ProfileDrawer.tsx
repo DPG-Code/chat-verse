@@ -111,7 +111,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({ data,isOpen,onClose }) =>
           )}
           <button
             data-test-id='open-modal-delete-conversation'
-            className='py-2.5 px-12 backdrop-blur bg-neutral-300/5 text-white font-medium flex items-center justify-center gap-3 rounded-full hover:bg-neutral-300/10 transition'
+            className='py-2.5 px-12 border border-neutral-700 bg-neutral-900 text-white font-medium flex items-center justify-center gap-3 hover:bg-neutral-800 transition rounded-lg xl:rounded-xl'
             onClick={() => setConfirmOpen(true)}
           >
             <span>Delete</span>

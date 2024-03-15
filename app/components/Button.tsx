@@ -30,12 +30,12 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       disabled={disabled}
       className={clsx(
-        'py-2 px-10 border-0 outline-0 font-medium flex items-center justify-center gap-2 rounded-full lg:text-xl lg:py-3 lg:px-16 lg:gap-3',
+        'py-2 px-8 outline-0 font-medium flex items-center justify-center gap-2 rounded-lg lg:text-xl lg:py-3 lg:px-16 lg:gap-3 xl:rounded-xl',
         disabled && 'opacity-50 cursor-default',
         fullWidth && 'w-full',
-        secondary && 'backdrop-blur bg-neutral-300/5 text-white hover:bg-neutral-300/10 transition',
-        danger && 'bg-red-800 text-white hover:bg-red-700 transition',
-        !secondary && !danger && 'bg-violet-900 hover:shadow-[0px_0px_16px_#4c1d95] text-lg text-white transition'
+        secondary && 'border border-neutral-700 bg-neutral-900 text-white hover:bg-neutral-800 transition',
+        danger && 'border border-red-800 bg-red-800 text-white hover:bg-red-700 transition',
+        !secondary && !danger && 'border border-white bg-white hover:shadow-[0px_0px_14px_#ffffff] text-neutral-950 transition'
       )}
     >
       {children}

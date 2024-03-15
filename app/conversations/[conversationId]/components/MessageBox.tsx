@@ -43,9 +43,9 @@ const MessageBox: React.FC<MessageBoxPops> = ({ data,isLast }) => {
   const message = clsx(
     'text-sm font-light w-fit overflow-hidden lg:texl-lg xl:text-xl 2xl:text-2xl',
     isOwn ? 'bg-violet-700/20 text-white' : 'bg-neutral-900 text-white',
-    (!data.image && isOwn) && 'rounded-l-2xl rounded-b-2xl p-4 xl:p-6 sm:max-w-[600px] 2xl:max-w-[720px]',
-    (!data.image && !isOwn) && 'rounded-r-2xl rounded-b-2xl p-4 xl:p-6 sm:max-w-[600px] 2xl:max-w-[720px]',
-    data.image && 'p-4 rounded-2xl'
+    (!data.image && isOwn) && 'rounded-l-2xl rounded-b-2xl p-2 xl:p-3 sm:max-w-[600px] 2xl:p-4 2xl:max-w-[720px]',
+    (!data.image && !isOwn) && 'rounded-r-2xl rounded-b-2xl p-2 xl:p-3 sm:max-w-[600px] 2xl:p-4 2xl:max-w-[720px]',
+    data.image && 'p-2 rounded-2xl xl:p-3 2xl:p-4'
   )
 
   return (
@@ -56,7 +56,7 @@ const MessageBox: React.FC<MessageBoxPops> = ({ data,isLast }) => {
       <section className={body}>
         <header className='flex items-center justify-start gap-6'>
           <p className={`${isOwn && 'order-2'} text-white text-lg font-semibold lg:text-xl`}>{data.sender.name}</p>
-          <p className='text-xs text-neutral-400 font-medium lg:text-sm'>{format(new Date(data.createdAt),'p')}</p>
+          <p className='text-xs text-neutral-500 font-medium lg:text-sm'>{format(new Date(data.createdAt),'p')}</p>
         </header>
         <div className={message}>
           <ImageModal

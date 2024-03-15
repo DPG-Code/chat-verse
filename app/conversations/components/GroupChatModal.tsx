@@ -65,11 +65,13 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({ users,isOpen,onClose })
       onClose={onClose}
     >
       <form
-        className='py-12 px-6 max-w-[320px] text-center flex flex-col items-center justify-center gap-6 z-20 relative lg:p-16 lg:max-w-[560px] lg:gap-8'
+        className='py-14 px-6 max-w-[320px] text-center flex flex-col items-center justify-center gap-6 z-20 relative lg:p-16 lg:max-w-[560px] lg:gap-8'
         onSubmit={handleSubmit(onSubmit)}
       >
-        <h2 className='text-center text-white text-3xl font-bold leading-7 lg:text-5xl'>Create a chat group</h2>
-        <p className='text-center text-base text-neutral-400 font-medium max-w-[220px] lg:text-xl lg:max-w-none'>Create a chat with more than 2 people</p>
+        <div className='w-full flex flex-col text-left gap-1 lg:gap-2'>
+          <h2 className='text-white text-xl font-bold lg:text-3xl'>Create a chat group</h2>
+          <p className='text-base text-neutral-400 lg:text-xl'>Create a chat with more than 2 people</p>
+        </div>
         <Input
           register={register}
           placeholder='Group name'
