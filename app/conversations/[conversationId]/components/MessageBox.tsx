@@ -43,8 +43,8 @@ const MessageBox: React.FC<MessageBoxPops> = ({ data,isLast }) => {
   const message = clsx(
     'text-sm font-light w-fit overflow-hidden lg:texl-lg xl:text-xl 2xl:text-2xl',
     isOwn ? 'bg-violet-700/20 text-white' : 'bg-neutral-900 text-white',
-    (!data.image && isOwn) && 'rounded-l-2xl rounded-b-2xl p-2 xl:p-3 sm:max-w-[600px] 2xl:p-4 2xl:max-w-[720px]',
-    (!data.image && !isOwn) && 'rounded-r-2xl rounded-b-2xl p-2 xl:p-3 sm:max-w-[600px] 2xl:p-4 2xl:max-w-[720px]',
+    (!data.image && isOwn) && 'rounded-l-2xl rounded-b-2xl p-3 xl:p-4 sm:max-w-[600px] 2xl:p-5 2xl:max-w-[720px]',
+    (!data.image && !isOwn) && 'rounded-r-2xl rounded-b-2xl p-3 xl:p-4 sm:max-w-[600px] 2xl:p-5 2xl:max-w-[720px]',
     data.image && 'p-2 rounded-2xl xl:p-3 2xl:p-4'
   )
 
