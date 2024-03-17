@@ -51,7 +51,7 @@ const Input: React.FC<InputProps> = ({
         {...register(id,{ required })}
         placeholder={placeholder}
         className={clsx(
-          'py-2 px-6 w-auto backdrop-blur bg-neutral-300/5 outline-0 text-sm font-medium text-white placeholder:text-neutral-400 rounded-full xl:py-3 xl:px-8 xl:text-lg',
+          'py-2 px-6 w-auto border border-neutral-700 outline-0 bg-neutral-900/30 text-sm font-medium text-white placeholder:text-neutral-400 rounded-xl xl:py-3 xl:px-7 xl:text-lg',
           errors[id] && 'focus:ring-offset-2 focus:ring-offset-red-800',
           disabled && 'opacity-50 cursor-default',
           homeForm && 'min-w-[260px] lg:w-[420px] xl:w-[520px]',
