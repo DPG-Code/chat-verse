@@ -35,8 +35,8 @@ const Form = () => {
   }
 
   return (
-    <footer className='mt-auto py-4 px-6 w-full text-white flex items-center relative lg:p-12'>
-      <form className='py-3 px-4 w-full flex items-center border border-neutral-700 outline-0 bg-neutral-900 rounded-xl gap-4 lg:gap-6 lg:py-4 lg:px-8 2xl:py-5' onSubmit={handleSubmit(onSubmit)}>
+    <footer className='mt-auto py-4 px-6 w-full text-white flex items-center relative lg:py-6 lg:px-12 2xl:py-8 2xl:p-12'>
+      <form className='py-2 px-3 w-full flex items-center border border-neutral-700 outline-0 bg-neutral-900 rounded-xl gap-4 lg:gap-6 lg:py-3 lg:px-6' onSubmit={handleSubmit(onSubmit)}>
         <MessageInput
           id='message'
           register={register}
