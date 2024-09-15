@@ -15,7 +15,7 @@
 <p></p>
 </div>
 
-![Next.js Badge](https://img.shields.io/badge/Next.js13-000?logo=nextdotjs=fff=flat)
+![Next.js Badge](https://img.shields.io/badge/Next.js_13-000?logo=nextdotjs=fff=flat)
 ![Typescript Badge](https://img.shields.io/badge/Typescript-2F74C1?logo=typescript&logoColor=fff&style=flat)
 ![React.js Badge](https://img.shields.io/badge/React-06B6D4?logo=react&logoColor=fff&style=flat)
 ![GitHub stars](https://img.shields.io/github/stars/Dpg-Code/chat-verse)
